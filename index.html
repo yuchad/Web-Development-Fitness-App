@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset=utf-8>
+<meta name="viewport" content="width=620">
+
+
+<meta name="google-signin-client_id" content="895501991573-jfffltlers3refnm8klrl9iog9fbskgr.apps.googleusercontent.com">
+<title>CPS630</title>
+
+<body>
+<div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+<a href="#" onclick="signOut();">Sign out</a>
+<script>
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+</script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+</body>
+</html>
