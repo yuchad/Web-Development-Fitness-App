@@ -7,7 +7,7 @@
  
 <meta name="google-signin-client_id" content="895501991573-jfffltlers3refnm8klrl9iog9fbskgr.apps.googleusercontent.com">
 <title>CPS630</title>
-
+<!-- 895501991573-jfffltlers3refnm8klrl9iog9fbskgr.apps.googleusercontent.com -->
 <body>
 <section>
   <div class="g-signin2" data-onsuccess="onSignIn"></div>
@@ -19,7 +19,7 @@
   
 </section>
 
-
+<!--
 <script>
   function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
@@ -29,7 +29,7 @@
   }
 </script>
 <script src="https://apis.google.com/js/platform.js" async defer></script>
-
+-->
 <p>Google Calendar API Quickstart</p>
 
     <!--Add buttons to initiate auth sequence and sign out-->
@@ -39,12 +39,35 @@
     <pre id="content"></pre>
 
     <script type="text/javascript">
+      var mealEvent = {
+        'summary': 'Meal Name',
+        'description': 'Recipes included as links.',
+        'start': {
+          'dateTime': '2015-05-28T09:00:00-07:00',
+          'timeZone': 'America/Los_Angeles'
+        },
+        'end': {
+          'dateTime': '2015-05-28T17:00:00-07:00',
+          'timeZone': 'America/Los_Angeles'
+        },
+        'recurrence': [
+          'RRULE:FREQ=DAILY;COUNT=2'
+        ],
+        'reminders': {
+          'useDefault': false,
+          'overrides': [
+            {'method': 'email', 'minutes': 24 * 60},
+            {'method': 'popup', 'minutes': 10}
+          ]
+        }
+      };
+
       // Client ID and API key from the Developer Console
       var CLIENT_ID = '895501991573-jfffltlers3refnm8klrl9iog9fbskgr.apps.googleusercontent.com';
 
       // Array of API discovery doc URLs for APIs used by the quickstart
       var DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
-
+      
       // Authorization scopes required by the API; multiple scopes can be
       // included, separated by spaces.
       var SCOPES = "https://www.googleapis.com/auth/calendar.readonly";
@@ -71,6 +94,11 @@
         }).then(function () {
           // Listen for sign-in state changes.
           gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+
+          // Handle the initial sign-in state.
+          updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+          authorizeButton.onclick = handleAuthClick;
+          signoutButton.onclick = handleSignoutClick;
         });
       }
 
@@ -80,8 +108,27 @@
        */
       function updateSigninStatus(isSignedIn) {
         if (isSignedIn) {
+          authorizeButton.style.display = 'none';
+          signoutButton.style.display = 'block';
           listUpcomingEvents();
+        } else {
+          authorizeButton.style.display = 'block';
+          signoutButton.style.display = 'none';
         }
+      }
+
+      /**
+       *  Sign in the user upon button click.
+       */
+      function handleAuthClick(event) {
+        gapi.auth2.getAuthInstance().signIn();
+      }
+
+      /**
+       *  Sign out the user upon button click.
+       */
+      function handleSignoutClick(event) {
+        gapi.auth2.getAuthInstance().signOut();
       }
 
       /**
@@ -92,9 +139,7 @@
        */
       function appendPre(message) {
         var pre = document.getElementById('content');
-        //var textContent = document.createTextNode(message + '\n');
-        var textContent = document.createTextNode('TEST MESSAGE');
-        console.log(textContent);
+        var textContent = document.createTextNode(message + '\n');
         pre.appendChild(textContent);
       }
 
@@ -129,13 +174,12 @@
           }
         });
       }
-
+    
     </script>
 
     <script async defer src="https://apis.google.com/js/api.js"
       onload="this.onload=function(){};handleClientLoad()"
       onreadystatechange="if (this.readyState === 'complete') this.onload()">
     </script>
-
 </body>
 </html>
