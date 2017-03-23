@@ -1,0 +1,64 @@
+<input id="search" />
+
+<div class="file">
+        <h5>Upload<br><input type="file" id="myFile" multiple size="50" onchange="fileUpload()"> </h5>
+</div>
+
+
+<section class="something">
+    <h3>Insert Data</h3>
+    <form action="/something" method="post">
+        <div class="input">
+            <label for="title">Something</label>
+            <input type="text" id="title" name="something">
+        </div>
+        <button type="submit">INSERT</button>
+    </form>
+</section>
+
+
+<section class="insert">
+    <h3>Insert Data</h3>
+    <form action="/insert" method="post">
+        <div class="input">
+            <label for="title">Title</label>
+            <input type="text" id="title" name="title">
+        </div>
+        <div class="input">
+            <label for="content">Content</label>
+            <input type="text" id="content" name="content">
+        </div>
+        <div class="input">
+            <label for="author">Author</label>
+            <input type="text" id="author" name="author">
+        </div>
+        <button type="submit">INSERT</button>
+    </form>
+</section>
+
+<section class="getIngredients">
+    <h3>Get ingredients</h3>
+    <a href="/get-ingredients">LOAD DATA</a>
+    <div>
+        {{# each items }}
+            <article class="item">
+                <div> {{ this }}</div>
+            </article>
+        {{/each}}
+    </div>
+</section>
+
+<section class="get">
+    <h3>Get Data</h3>
+    <a href="/get-data">LOAD DATA</a>
+    <div>
+        {{# each items }}
+            <article class="item">
+                <div>Title: {{ this.title }}</div>
+                <div>Content: {{ this.content }}</div>
+                <div>Author: {{ this.author }}</div>
+                <div>ID: {{ this._id }}</div>
+            </article>
+        {{/each}}
+    </div>
+</section>
