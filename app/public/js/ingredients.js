@@ -1,3 +1,5 @@
+var finalIngredients;
+
 function newIngredient(e) {
   if (e.keyCode === 13) {
       var node = document.createElement("input");
@@ -13,7 +15,7 @@ function newIngredient(e) {
 }
 
 function getAllIngredients(){
-  var finalIngredients = [];
+  finalIngredients = [];
 
   var items = document.getElementsByClassName("awesomplete");
   for (var i = 0; i < items.length; i++) {
@@ -24,6 +26,20 @@ function getAllIngredients(){
     }
   }
 
-  console.log("This is the list we will send to get recipes");
-  console.log(finalIngredients);
+
+  console.log(finalIngredients)
+
+  var ingredient = '';
+  for (var i = 0; i < finalIngredients.length; i++) {
+    var item = finalIngredients[i];
+
+    if (i === finalIngredients.length -1) {
+      ingredient += item;
+    }
+    else {
+      ingredient += item + ',';
+    }
+  }
+  console.log(ingredient)
+  doIt(ingredient)
 }
