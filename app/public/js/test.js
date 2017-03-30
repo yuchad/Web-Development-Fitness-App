@@ -12,7 +12,7 @@ function doIt(ingredients) {
         //console.log(data);
 
        	document.getElementById("output").innerHTML = data[0].title;
-       	 document.getElementById("outputID").innerHTML = data[0].id;
+       	document.getElementById("outputID").innerHTML = data[0].id;
        	console.log(data);
         },
     error: function(err) { alert(err); },
