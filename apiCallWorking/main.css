@@ -1,0 +1,37 @@
+html { 
+ 	background:url('Images/kitchen-background.jpg') no-repeat center center;
+ 		/* Ensure the html element always takes up the full height of the browser window */
+	min-height:100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+    
+    
+.buttons{
+    position: fixed; /* or absolute */
+  top: 50%;
+  left: 50%;
+}
+    
+#authorize-button{
+    
+    background:url('Images/signIn.png');
+    width: 600px;
+    height: 100px;
+    margin-left:-300px;
+    border:0px;
+     border-radius: 25px;
+}
+
+#signout-button{
+    background:url('Images/signOut.png');
+    width: 314px;
+    height: 104px;
+    border:0px;
+    margin-left:-157px;
+    border-radius: 25px;
+    
+}
+    

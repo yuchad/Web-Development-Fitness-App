@@ -11,6 +11,7 @@
       <script src='../fullcalendar.min.js'></script>
 
   </head>
+<!-- 
   <script>
 /* global $ */
 	$(document).ready(function() {
@@ -101,6 +102,9 @@
 	}
 
 </style>
+
+-->
+
   <body>
     <p>Google Calendar API Quickstart</p>
 
@@ -199,6 +203,8 @@
        * the authorized user's calendar. If no events are found an
        * appropriate message is printed.
        */
+       
+       /**
       function listUpcomingEvents() {
         gapi.client.calendar.events.list({
           'calendarId': 'primary',
@@ -224,8 +230,9 @@
             appendPre('No upcoming events found.');
           }
         });
+        
       }
-
+    **/
     </script>
 
     <script async defer src="https://apis.google.com/js/api.js"
