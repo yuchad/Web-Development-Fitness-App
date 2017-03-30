@@ -29,6 +29,12 @@ function doIt(ingredients) {
                         calories.setAttribute('id','calories');
                         recipeDIV.appendChild(calories);
 
+                        var time = document.createElement("p");
+                        var node = document.createTextNode("Ready in: " + data.readyInMinutes + " minutes");
+                        time.appendChild(node);
+                        time.setAttribute('id','time');
+                        recipeDIV.appendChild(time);
+
                         var recipeImage = document.createElement("img");
                         recipeImage.setAttribute('src',data.image);
                         recipeImage.setAttribute('id','image');
