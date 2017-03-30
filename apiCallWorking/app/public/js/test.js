@@ -80,6 +80,16 @@ function doIt(ingredients) {
 
 var favList = [];
 function addFav(id){
-    favList.push(id);
+    if (favList.length == 0) {
+        favList.push(id);
+    }
+    else{
+        if (favList.indexOf(id) == -1){
+            favList.push(id);
+        }
+        else{
+            console.log("already added, fuck off");  
+        }
+    }
     console.log(favList);
 }
