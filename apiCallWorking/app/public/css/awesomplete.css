@@ -102,3 +102,12 @@
 			color: inherit;
 		}
 /*# sourceMappingURL=awesomplete.css.map */
+#image{
+	width: 300px;
+	height: 200px;
+}
+
+#link{
+	text-align: center;
+	display:block;
+}
