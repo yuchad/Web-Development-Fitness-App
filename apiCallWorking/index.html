@@ -6,9 +6,10 @@
   <meta name="viewport" content="width=620">
 
   <!-- Bootstrap shit -->
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="main.css">
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
   <meta name="google-signin-client_id" content="895501991573-jfffltlers3refnm8klrl9iog9fbskgr.apps.googleusercontent.com">
 </head>
@@ -21,12 +22,31 @@
   <!--<p>Google Calendar API Quickstart</p>-->
   <div class = "buttons">
      <!--Add buttons to initiate auth sequence and sign out-->
-  <input type = "button" id="authorize-button" onclick=></button>
-  <!--<input type = "button" id="signout-button"></button>-->
+  <input type = "button" id="authorize-button"></button>
+  <input type = "button" id="signout-button"></button>
     
+  <input type=button id="cont" onClick="location.href = 'form.html'" value='Continue'>
   </div>
- 
+   
+   <!--
+   <script language="javascript">
+    var auth = document.getElementById('authorize-button');
+    var cont = document.getElementById('cont');
 
+    auth.onClick = function() {
+      cont.style.visibility = "visible";
+    }
+   </script>
+   -->
+   <script>
+  $(document).ready(function(){
+      $("#cont").hide();
+      $("#authorize-button").click(function(){
+          $("#cont").show();
+      });
+  });
+  </script>
+  
   <script type="text/javascript">
     // Client ID and API key from the Developer Console
     var CLIENT_ID = '895501991573-jfffltlers3refnm8klrl9iog9fbskgr.apps.googleusercontent.com';
@@ -73,15 +93,15 @@
      *  appropriately. After a sign-in, the API is called.
      */
     function updateSigninStatus(isSignedIn) {
-      // if (isSignedIn) {
-      //   authorizeButton.style.display = 'none';
-      //   signoutButton.style.display = 'block';
-      //   listUpcomingEvents();
-      // }
-      // else {
-      //   authorizeButton.style.display = 'block';
-      //   signoutButton.style.display = 'none';
-      // }
+      if (isSignedIn) {
+        authorizeButton.style.display = 'none';
+        signoutButton.style.display = 'block';
+        //listUpcomingEvents();
+      }
+      else {
+        authorizeButton.style.display = 'block';
+        signoutButton.style.display = 'none';
+      }
     }
 
     /**
