@@ -4,16 +4,49 @@
     <title>Google Calendar API Quickstart</title>
     <meta charset='utf-8' />
 
-      <link href='../fullcalendar.min.css' rel='stylesheet' />
-      <link href='../fullcalendar.print.min.css' rel='stylesheet' media='print' />
-      <script src='../lib/moment.min.js'></script>
-      <script src='../lib/jquery.min.js'></script>
-      <script src='../fullcalendar.min.js'></script>
+      <link href='lib/fullcalendar.min.css' rel='stylesheet' />
+      <link href='lib/fullcalendar.print.min.css' rel='stylesheet' media='print' />
+      <script src='lib/moment.min.js'></script>
+      <script src='lib/jquery.min.js'></script>
+      <script src='lib/fullcalendar.min.js'></script>
+      
 
   </head>
 
   <script>
-/* global $ */
+  
+</script>
+<style>
+
+	body {
+		margin: 40px 10px;
+		padding: 0;
+		font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
+		font-size: 14px;
+	}
+
+	#calendar {
+		max-width: 900px;
+		margin: 0 auto;
+	}
+
+</style>
+
+
+
+  <body>
+    <p>Google Calendar API Quickstart</p>
+
+    <!--Add buttons to initiate auth sequence and sign out-->
+    <button id="authorize-button" style="display: none;">Authorize</button>
+    <button id="signout-button" style="display: none;">Sign Out</button>
+
+    <pre id="content"></pre>
+
+	  <div id='calendar'></div>
+    
+    <script type="text/javascript">
+    /* global $ */
 	$(document).ready(function() {
 		
 		$('#calendar').fullCalendar({
@@ -86,35 +119,6 @@
 		
 	});
 
-</script>
-<style>
-
-	body {
-		margin: 40px 10px;
-		padding: 0;
-		font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
-		font-size: 14px;
-	}
-
-	#calendar {
-		max-width: 900px;
-		margin: 0 auto;
-	}
-
-</style>
-  
-  <body>
-    <p>Google Calendar API Quickstart</p>
-
-    <!--Add buttons to initiate auth sequence and sign out-->
-    <button id="authorize-button" style="display: none;">Authorize</button>
-    <button id="signout-button" style="display: none;">Sign Out</button>
-
-    <pre id="content"></pre>
-
-	  <div id='calendar'></div>
-    
-    <script type="text/javascript">
       // Client ID and API key from the Developer Console
       var CLIENT_ID = '895501991573-jfffltlers3refnm8klrl9iog9fbskgr.apps.googleusercontent.com';
 
@@ -201,6 +205,11 @@
        * the authorized user's calendar. If no events are found an
        * appropriate message is printed.
        */
+       
+     var request = gapi.client.calendar.events.insert({
+        'calendarId': 'primary',
+        'resource': events
+      });
 
       function listUpcomingEvents() {
         gapi.client.calendar.events.list({
@@ -227,8 +236,9 @@
             appendPre('No upcoming events found.');
           }
         });
+        
       }
-
+  
     </script>
 
     <script async defer src="https://apis.google.com/js/api.js"
