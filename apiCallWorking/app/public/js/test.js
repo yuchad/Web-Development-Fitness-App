@@ -49,20 +49,32 @@ function doIt(ingredients) {
                         var fav = document.createElement("BUTTON");
                         fav.setAttribute('id','favorite');
                         fav.setAttribute('onclick','addFav();');
-                        fav.onclick = function(){addFav(data.id);};
+                        fav.onclick = function(){
+                            addFav(data.id);
+                            fav.setAttribute('style','display: none;');
+                            var rm = document.createElement("BUTTON");
+                            rm.setAttribute('id','removeFav');
+                            rm.innerHTML = "Remove From Favorite";
+                            recipeDIV.appendChild(rm);
+                            rm.setAttribute('onclick', 'removeFav();')
+                            rm.onclick = function(){
+                                removeFav(data.id);
+                                recipeDIV.removeChild(rm);
+                                fav.setAttribute('style','display: inline-block;');
+                            }
+                        };
                         fav.innerHTML = "Add to Favorite";
                         recipeDIV.appendChild(fav);
                         recipeDIV.setAttribute('id','recipeInfo');
 
-                        var br = document.createElement("BR");
-                        recipeDIV.appendChild(br);
-                        var br = document.createElement("BR");
-                        recipeDIV.appendChild(br);
-                        var br = document.createElement("BR");
-                        recipeDIV.appendChild(br);
-
                         var element = document.getElementById("recipes");
                         element.appendChild(recipeDIV);
+                        var br = document.createElement("BR");
+                        element.appendChild(br);
+                        var br = document.createElement("BR");
+                        element.appendChild(br);
+                        var br = document.createElement("BR");
+                        element.appendChild(br);
                     },
                     error: function(err) { alert(err); },
                     beforeSend: function(xhr) {
@@ -91,5 +103,10 @@ function addFav(id){
             console.log("already added, fuck off");  
         }
     }
+    console.log(favList);
+}
+
+function removeFav(id){
+    favList.splice(favList.indexOf(id), 1);
     console.log(favList);
 }
