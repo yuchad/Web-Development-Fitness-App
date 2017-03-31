@@ -11,9 +11,18 @@ html {
     
 .buttons{
     position: fixed; /* or absolute */
-  top: 50%;
+  top: 60%;
   left: 50%;
 }
+
+.logo{
+   position: fixed;
+   left:50%;
+    width: 400px;
+    height:300px;
+    margin-left:-200px;
+    margin-top: 20px;
+}    
     
 #authorize-button{
     
@@ -28,14 +37,14 @@ html {
 #signout-button{
     background:url('Images/signOut.png');
     width: 314px;
-    height: 104px;
+    height: 140px;
     border:0px;
     margin-left:-157px;
-    border-radius: 25px;
+    /*border-radius: 25px;*/
     
 }
 
-#cont {
+.cont {
     visibility: "hidden";
 }
     

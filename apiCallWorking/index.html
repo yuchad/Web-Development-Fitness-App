@@ -9,13 +9,31 @@
 <title>CPS630</title>
 <!-- 895501991573-jfffltlers3refnm8klrl9iog9fbskgr.apps.googleusercontent.com -->
 <body>
-<section>
-  <div class="g-signin2" data-onsuccess="onSignIn"></div>
-  
-  <a href="#" onclick="signOut();">Sign out</a>
-</section>
 
 <section>
+
+  <img class = "logo" src = "Images/ezeatinv3.png">
+  
+
+  <!--<p>Google Calendar API Quickstart</p>-->
+  <div class = "buttons">
+     <!--Add buttons to initiate auth sequence and sign out-->
+  <input type = "button" id="authorize-button"></button>
+  <input type = "button" id="signout-button"></button>
+    
+  <input type=button id="cont" onClick="location.href = 'form.html'" value='Continue'>
+  </div>
+   
+
+   <script>
+  $(document).ready(function(){
+      $("#cont").hide();
+      $("#authorize-button").click(function(){
+          $("#cont").show();
+      });
+  });
+  </script>
+
   
 </section>
 
