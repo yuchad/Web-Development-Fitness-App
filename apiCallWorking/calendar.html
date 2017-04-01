@@ -206,9 +206,12 @@
        * appropriate message is printed.
        */
        
-     var request = gapi.client.calendar.events.insert({
+      var request = gapi.client.calendar.events.insert({
         'calendarId': 'primary',
         'resource': events
+      });
+      request.execute(function(event) {
+        appendPre('Event created: ' + event.htmlLink);
       });
 
       function listUpcomingEvents() {
