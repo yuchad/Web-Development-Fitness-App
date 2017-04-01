@@ -14,6 +14,8 @@
 
 .awesomplete > input {
     display: block;
+    width: 100%;
+    padding: 5.828px;
 }
 
 .awesomplete > ul {
@@ -108,6 +110,9 @@
 }
 
 #link{
-	text-align: center;
 	display:block;
+}
+
+#recipeInfo, .h2{
+	text-align: center;
 }
