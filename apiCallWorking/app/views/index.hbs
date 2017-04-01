@@ -8,7 +8,7 @@
       </button>
       <a class="navbar-brand" href="index.hbs">
 
-        <img src="apiCallWorking/Images/ezeatinv3.png" />
+        
       </a>
 
     </div>
@@ -48,11 +48,17 @@
   </div>
 </div>
 <!-- LOGO HEADER END-->
-
+<div class="row">
+  <div class="col-sm-4"></div>
+  <div class="col-sm-4"> 
+    <h2>Welcome to your Dashboard!</h2></div>
+  <div class="col-sm-4"></div>
+</div>
 {{!-- Start menu section --}}
 <div class="container">
   <br>
-  <h3>Welcome to your Dashboard!</h3>
+ 
+
   <ul class="nav nav-pills nav-justified">
     <li class="active"><a data-toggle = "pill" href="#home">Home</a></li>
     <li><a data-toggle = "pill" href="#menu1">Find Recipes!</a></li>
@@ -61,13 +67,22 @@
   </ul>
   <!-- MENU SECTION END-->
 
+
+ {{!-- Content Page --}}
   <div class="tab-content">
     <div id="home" class="tab-pane fade in active">
-      <h3>HOME</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <div class="row">
+        <div class="col-sm-4"><br><img src="Images/ezeatinv3.png" height="200" width="200" /></div>
+        <div class="col-sm-4"><h3>Getting Started</h3></div>
+        <div class="col-sm-4">.col-sm-4</div>
+      </div>
+
+      
+      
+      
   </div>
 
-    {{!-- Content Page --}}
+   
     <div id="menu1" class="tab-pane fade">
      <div style="display:none;" id="data" >{{data}}</div>
 
