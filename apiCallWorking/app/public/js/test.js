@@ -14,7 +14,7 @@ function doIt(ingredients) {
                     data: {}, // Additional parameters here
                     dataType: 'json',
                     success: function(data) {
-                        //console.log(data);
+                        console.log(data);
                         var recipeDIV = document.createElement("div");
 
                         var name = document.createElement("h4");
