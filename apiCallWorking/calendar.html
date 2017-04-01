@@ -46,20 +46,8 @@
 	  <div id='calendar'></div>
     
     <script type="text/javascript">
-    /* global $ */
-	$(document).ready(function() {
-		
-		$('#calendar').fullCalendar({
-			header: {
-				left: 'prev,next today',
-				center: 'title',
-				right: 'month,basicWeek,basicDay'
-			},
-			defaultDate: '2017-03-12',
-			navLinks: true, // can click day/week names to navigate views
-			editable: true,
-			eventLimit: true, // allow "more" link when too many events
-			events: [
+    
+    events: [
 				{
 					title: 'All Day Event',
 					start: '04/01/2017'
@@ -115,9 +103,23 @@
 					start: '2017-03-28'
 				}
 			]
-		});
-		
-	});
+    /* global $ */
+  	$(document).ready(function() {
+  		
+  		$('#calendar').fullCalendar({
+  			header: {
+  				left: 'prev,next today',
+  				center: 'title',
+  				right: 'month,basicWeek,basicDay'
+  			},
+  			defaultDate: '2017-03-12',
+  			navLinks: true, // can click day/week names to navigate views
+  			editable: true,
+  			eventLimit: true, // allow "more" link when too many events
+  			
+  		});
+  		
+  	});
 
       // Client ID and API key from the Developer Console
       var CLIENT_ID = '895501991573-jfffltlers3refnm8klrl9iog9fbskgr.apps.googleusercontent.com';
