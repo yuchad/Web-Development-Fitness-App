@@ -1,4 +1,45 @@
-<div style="display:none;" id="data" >{{data}}</div>
+{{!--<div style="display:none;" id="data" >{{data}}</div>--}}
+
+{{!--<div class="container-fluid">--}}
+{{!--  <div class="row">--}}
+
+{{!--    <div class="col-md-3 col-sm-3 col-xs-3">--}}
+
+{{!--      <div id="ingredientsList">--}}
+{{!--        <h5>Enter your ingredients</h5>--}}
+{{!--        <input id="search" placeholder="Enter item" onkeyup="newIngredient(event);">--}}
+{{!--      </div>--}}
+
+{{!--      <br>--}}
+{{!--      <button  type="button" class="btn btn-success btn-xs" onclick="getAllIngredients();">Let's see what we can make!</button>--}}
+
+{{!--    </div>--}}
+
+{{!--    <div class="col-md-9 col-sm-9 col-xs-9">--}}
+{{!--      <h2>Main user interface</h2>--}}
+{{!--      <div id = "recipes"></div>--}}
+{{!--    </div>--}}
+{{!--  </div>--}}
+{{!--</div>--}}
+
+<div class="container">
+ 
+  <br>
+  <h3>Centered Pills</h3>
+  <ul class="nav nav-pills nav-justified">
+    <li class="active"><a data-toggle = "pill" href="#home">Home</a></li>
+    <li><a data-toggle = "pill" href="#menu1">Menu 1</a></li>
+    <li><a data-toggle = "pill" href="#menu2">Menu 2</a></li>
+    <li><a data-toggle = "pill" href="#menu3">Menu 3</a></li>
+  </ul>
+  
+   <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <h3>HOME</h3>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    </div>
+    <div id="menu1" class="tab-pane fade">
+               <div style="display:none;" id="data" >{{data}}</div>
 
 <div class="container-fluid">
   <div class="row">
@@ -29,18 +70,24 @@
 </div>
 
 
+    <div id="menu2" class="tab-pane fade">
+      <h3>Menu 2</h3>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+    </div>
 
 
-
-
-
-
+    <div id="menu3" class="tab-pane fade">
+      <h3>Menu 3</h3>
+      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+    </div>
+  </div>
+</div>
+</div>
 
 
 <script>
   var ingredients = document.getElementById("data").innerHTML;
   ingredients = JSON.parse(ingredients);
-
   $.getScript('/js/awesomplete.js', function()
     {
       var input = document.getElementById("search");
@@ -51,7 +98,7 @@
     });
 </script>
 
-<section class="insert">
+{{!-- <section class="insert">
     <h3>Insert Data</h3>
     <form action="/insert" method="post">
         <div class="input">
@@ -74,3 +121,50 @@
         {{/each}}
     </div>
 </section>
+ --}}
+
+
+
+
+
+
+
+
+
+{{!--<script>--}}
+{{!--  var ingredients = document.getElementById("data").innerHTML;--}}
+{{!--  ingredients = JSON.parse(ingredients);--}}
+
+{{!--  $.getScript('/js/awesomplete.js', function()--}}
+{{!--    {--}}
+{{!--      var input = document.getElementById("search");--}}
+{{!--      new Awesomplete(input, {--}}
+{{!--        list: ingredients--}}
+{{!--      });--}}
+{{!--      console.log("Suggestion bar ready");--}}
+{{!--    });--}}
+{{!--</script>--}}
+
+{{!--<section class="insert">--}}
+{{!--    <h3>Insert Data</h3>--}}
+{{!--    <form action="/insert" method="post">--}}
+{{!--        <div class="input">--}}
+{{!--            <label for="title">Title</label>--}}
+{{!--            <input type="text" id="ingredients" name="ingredients">--}}
+{{!--        </div>--}}
+{{!--        <button type="submit">INSERT</button>--}}
+{{!--    </form>--}}
+{{!--</section>--}}
+
+
+{{!--<section class="get">--}}
+{{!--    <h3>Get Data</h3>--}}
+{{!--    <a href="/get-data">LOAD DATA</a>--}}
+{{!--    <div>--}}
+{{!--        {{# each items }}--}}
+{{!--            <article class="item">--}}
+{{!--                <div>Title: {{ this.title }}</div>--}}
+{{!--            </article>--}}
+{{!--        {{/each}}--}}
+{{!--    </div>--}}
+{{!--</section>--}}
