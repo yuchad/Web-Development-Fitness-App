@@ -1,46 +1,40 @@
+<<<<<<< HEAD
+=======
+<img style="text-align:center;" class="brand" src="/Images/ezeatinv3.png" height="250" width="250"/>
+>>>>>>> c9dd60e062c09f0e1a4a9eff4d06c5538916bd52
 <div class="container">
- 
-  <br>
-  <h3>Centered Pills</h3>
-  <ul class="nav nav-pills nav-justified">
-    <li class="active"><a data-toggle = "pill" href="#home">Home</a></li>
-    <li><a data-toggle = "pill" href="#menu1">Menu 1</a></li>
-    <li><a data-toggle = "pill" href="#menu2">Menu 2</a></li>
-    <li><a data-toggle = "pill" href="#menu3">Menu 3</a></li>
-  </ul>
-  
-   <div class="tab-content">
-    <div id="home" class="tab-pane fade in active">
-      <h3>HOME</h3>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-    </div>
-    <div id="menu1" class="tab-pane fade">
-               <div style="display:none;" id="data" >{{data}}</div>
-
-<div class="container-fluid">
   <div class="row">
-
-    <div class="col-md-3 col-sm-3 col-xs-3">
-
-      <div id="ingredientsList">
-        <h5>Enter your ingredients</h5>
-        <input id="search" placeholder="Enter item" onkeyup="newIngredient(event);">
-      </div>
-
-      <br>
-      <button  type="button" class="btn btn-success btn-xs" onclick="getAllIngredients();">Let's see what we can make!</button>
+    <div class="col-md-1 col-xs-1">
 
     </div>
+<<<<<<< HEAD
     <div class="col-md-6 col-sm-6 col-xs-6">
       <h2 class = "h2">Main user interface</h2>
       <button id ="fav"> View Favorite </button> 
       <div id = "recipes"></div>
+=======
+    <div class="col-md-4 col-xs-4 login">
+      <section class="insert">
+          <form action="/logged-in" method="post">
+              <h5>Already a user, login fuck face</h5>
+              {{ data }}
+              <p>
+                <label for="usernamesignup" class="uname" data-icon="u">Your username</label><br>
+                <input id="username" name="username" required="required" type="text" placeholder="Enter username" />
+              </p>
+              <p>
+                <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label><br>
+                <input id="password" name="password" required="required" type="text" placeholder="eg. X8df!90EO"/>
+              </p>
+              <button type="submit">Login</button>
+          </form>
+      </section>
+>>>>>>> c9dd60e062c09f0e1a4a9eff4d06c5538916bd52
     </div>
+    <div class="col-md-2 col-xs-2">
 
-    <div class="col-md-3 col-sm-3 col-xs-3">
-      <h2 class="h2">Favorites</h2>
-      <div id = "favorites"></div>
     </div>
+<<<<<<< HEAD
   </div>
 </div>
 
@@ -48,15 +42,38 @@
     <div id="menu2" class="tab-pane fade">
       <h3>Menu 2</h3>
       <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+=======
+    <div class="col-md-4 col-xs-4 newuser">
+      <section class="registration">
+        <form  action="/newUser" method="post" autocomplete="on">
+                <h5> Sign up then cunt</h5>
+                <p>
+                  <label for="usernamesignup" class="uname" data-icon="u">Your username</label><br>
+                  <input id="username" name="username" required="required" type="text" placeholder="Enter username" />
+                </p>
+                <p>
+                  <label for="emailsignup" class="youmail" data-icon="e" > Your email</label><br>
+                  <input id="email" name="email" required="required" type="email" placeholder="myemail@mail.com"/>
+                </p>
+                <p>
+                  <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label><br>
+                  <input id="password" name="password" required="required" type="text" placeholder="eg. X8df!90EO"/>
+                </p>
+                <p>
+                  <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label><br>
+                  <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="text" placeholder="eg. X8df!90EO"/>
+                </p>
+                <button type="submit">Sign up</button>
+        </form>
+      </section>
+>>>>>>> c9dd60e062c09f0e1a4a9eff4d06c5538916bd52
     </div>
+    <div class="col-md-1 col-xs-1">
 
-
-    <div id="menu3" class="tab-pane fade">
-      <h3>Menu 3</h3>
-      <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
     </div>
   </div>
 </div>
+<<<<<<< HEAD
 </div>
 
 
@@ -73,3 +90,5 @@
     });
 </script>
 
+=======
+>>>>>>> c9dd60e062c09f0e1a4a9eff4d06c5538916bd52
