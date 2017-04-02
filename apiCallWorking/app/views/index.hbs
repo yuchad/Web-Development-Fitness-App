@@ -1,55 +1,114 @@
 <img style="text-align:center;" class="brand" src="/Images/ezeatinv3.png" height="250" width="250"/>
+
 <div class="container">
   <div class="row">
-    <div class="col-md-1 col-xs-1">
+    <div class="col-md-4 col-xs-4"></div>
+
+    <div class="col-md-4 col-xs-4">
+      <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#home">Login</a></li>
+        <li><a data-toggle="tab" href="#menu1">Sign up</a></li>
+      </ul>
+
+      <div class="tab-content">
+        <div id="home" class="tab-pane fade in active login">
+          <section class="insert">
+              <form action="/logged-in" method="post">
+                  <h5>Already a user, login fuck face</h5>
+                  {{ data }}
+                  <p>
+                    <label for="usernamesignup" class="uname" data-icon="u">Your username</label><br>
+                    <input id="username" name="username" required="required" type="text" placeholder="Enter username" />
+                  </p>
+                  <p>
+                    <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label><br>
+                    <input id="password" name="password" required="required" type="text" placeholder="eg. X8df!90EO"/>
+                  </p>
+                  <button type="submit">Login</button>
+              </form>
+          </section>
+        </div>
+        <div id="menu1" class="tab-pane fade login">
+          <section class="registration">
+            <form  action="/newUser" method="post" autocomplete="on">
+                    <h5> Sign up then cunt</h5>
+                    <p>
+                      <label for="usernamesignup" class="uname" data-icon="u">Your username</label><br>
+                      <input id="username" name="username" required="required" type="text" placeholder="Enter username" />
+                    </p>
+                    <p>
+                      <label for="emailsignup" class="youmail" data-icon="e" > Your email</label><br>
+                      <input id="email" name="email" required="required" type="email" placeholder="myemail@mail.com"/>
+                    </p>
+                    <p>
+                      <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label><br>
+                      <input id="password" name="password" required="required" type="text" placeholder="eg. X8df!90EO"/>
+                    </p>
+                    <p>
+                      <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label><br>
+                      <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="text" placeholder="eg. X8df!90EO"/>
+                    </p>
+                    <div class="single-field">
+                     <label for="gender" class="">Gender</label>
+                     <select name="gender" id="gender">
+                     <option value="female">Female</option>
+                     <option value="male">Male</option>
+                     </select>
+                </div>
+
+                      <div class="single-field">
+                          <label for="age">Age </label>
+                          <input type="number" step="any" min="0" name="age" id="age" class="calculatorMedInput" >
+                      </div>
+
+                      <div class="single-field">
+                          <label for="height">Height <small>&nbsp;(e.g. 183)</small>:</label>
+                          <input type="number" step="any" min="0" name="height" id="height" class="calculatorShortInput" value="0" >
+                          <span class="additional">cm</span>
+                          <br class="clear">
+                      </div>
+
+                      <div class="single-field">
+                          <label for="weight">Weight <small>&nbsp;(e.g. 63)</small>:</label>
+                          <input type="number" step="any" min="0" name="weight" id="weight" class="calculatorShortInput" value="0">
+                          <span class="additional">kg</span>
+                          <br class="clear">
+                      </div>
+
+                     <br>
+                     <b><span class="white">Select your activity level:</span></b>
+                     <br><br>
+
+                     <div id="activity" name"activity">
+                       <input type="radio" id="a" value="1.2" name="activityLevel"> <span class="white">I am sedentary (little or no exercise)</span><br>
+                       <input type="radio" id="b" value="1.375" name="activityLevel"> <span class="white">I am lightly active (light exercise or sports 1-3 days per week)</span><br>
+                       <input type="radio" id="c" value="1.55" name="activityLevel"> <span class="white">I am moderately active (moderate exercise or sports 3-5 days per week)</span><br>
+                       <input type="radio" id="d" value="1.725" name="activityLevel"> <span class="white">I am very active (hard exercise or sports 6-7 days per week)</span><br>
+                       <input type="radio" id="e" value="1.9" name="activityLevel"> <span class="white">I am super active (very hard exercise or sports and a physical job or 2x training)</span>
+					           </div>
+
+                     <br style="clear:both;"><br>
+
+
+                     <b><span class="gainLose">How much do you wanna lose/gain?</span></b>
+                    <br><br>
+
+                     <div id="" name"activity">
+                     <input type="radio" id="loseHalf" value="400" name="goal"> <span class="gainLose">Do you want to lose 0.5</span><br>
+                     <input type="radio" id="loseOne" value="400" name="goal"> <span class="gainLose">Do you want to lose 1 kg</span><br>
+                     <input type="radio" id="gainHalf" value="400" name="goal"> <span class="gainLose">Do you want to gain 0.5 kg.</span><br>
+                     <input type="radio" id="gainOne" value="400" name="goal"> <span class="gainLose">Do you want to gain 1 kg.</span><br>
+                     </div>
+
+                    <button type="submit">Sign up</button>
+            </form>
+          </section>
+        </div>
+      </div>
+      </div>
 
     </div>
-    <div class="col-md-4 col-xs-4 login">
-      <section class="insert">
-          <form action="/logged-in" method="post">
-              <h5>Already a user, login fuck face</h5>
-              {{ data }}
-              <p>
-                <label for="usernamesignup" class="uname" data-icon="u">Your username</label><br>
-                <input id="username" name="username" required="required" type="text" placeholder="Enter username" />
-              </p>
-              <p>
-                <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label><br>
-                <input id="password" name="password" required="required" type="text" placeholder="eg. X8df!90EO"/>
-              </p>
-              <button type="submit">Login</button>
-          </form>
-      </section>
-    </div>
-    <div class="col-md-2 col-xs-2">
 
-    </div>
-    <div class="col-md-4 col-xs-4 newuser">
-      <section class="registration">
-        <form  action="/newUser" method="post" autocomplete="on">
-                <h5> Sign up then cunt</h5>
-                <p>
-                  <label for="usernamesignup" class="uname" data-icon="u">Your username</label><br>
-                  <input id="username" name="username" required="required" type="text" placeholder="Enter username" />
-                </p>
-                <p>
-                  <label for="emailsignup" class="youmail" data-icon="e" > Your email</label><br>
-                  <input id="email" name="email" required="required" type="email" placeholder="myemail@mail.com"/>
-                </p>
-                <p>
-                  <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label><br>
-                  <input id="password" name="password" required="required" type="text" placeholder="eg. X8df!90EO"/>
-                </p>
-                <p>
-                  <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label><br>
-                  <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="text" placeholder="eg. X8df!90EO"/>
-                </p>
-                <button type="submit">Sign up</button>
-        </form>
-      </section>
-    </div>
-    <div class="col-md-1 col-xs-1">
-
-    </div>
+    <div class="col-md-4 col-xs-4"></div>
   </div>
 </div>
