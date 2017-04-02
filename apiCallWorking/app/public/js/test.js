@@ -41,7 +41,8 @@ function doIt(ingredients) {
                         recipeDIV.appendChild(recipeImage);
 
                         var recipeLink = document.createElement("a");
-                        recipeLink.setAttribute('href',data.sourceUrl);
+                        recipeLink.setAttribute('href',data.sourceUrl);                        
+                        recipeLink.setAttribute('target','_blank');
                         recipeLink.setAttribute('id','link');
                         recipeLink.innerHTML = "View Recipe";
                         recipeDIV.appendChild(recipeLink);
