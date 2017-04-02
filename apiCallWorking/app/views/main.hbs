@@ -128,6 +128,14 @@
     <h3>Meal prep</h3>
     {{!-- <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p> --}}
       <div id = "favorites2"></div>
+
+ <div>
+  <p>Date: <input type="text" id="datepicker"></p>
+ </div>
+  <input class="form-control" id="single-input" value="" placeholder="Now">
+  <!--<button type="button" id="check-minutes">Check the minutes</button>-->
+       
+  
   </div>
 
 
@@ -135,6 +143,7 @@
     <h3>Menu 3</h3>
     <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
   </div>
+
 </div>
 </div>
 </div>
@@ -151,7 +160,29 @@
     });
     console.log("Suggestion bar ready");
   });
+
+
 </script>
+
+  <script type="text/javascript">
+    jQuery(document).ready(function($) {
+      var input = $('#single-input').clockpicker({
+          placement: 'bottom',
+          align: 'left',
+          autoclose: true,
+          'default': 'now'
+      });
+    
+    });
+  </script>
+
+  <script type="text/javascript">
+    jQuery(document).ready(function($){
+       $( '#datepicker' ).datepicker();
+     });
+
+
+  </script>
 
 {{!-- <section class="insert">
     <h3>Insert Data</h3>
