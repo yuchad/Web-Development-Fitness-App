@@ -39,8 +39,8 @@
 <div class="container">
   <br>
 
+  <ul class = "nav nav-pills nav-justified">
 
-  <ul class="list-home nav nav-pills nav-justified">
     <li class="active"><a data-toggle = "pill" href="#home">Home</a></li>
     <li><a data-toggle = "pill" href="#getStarted">Get Started</a></li>
     <li><a data-toggle = "pill" href="#menu1">Find Recipes!</a></li>
@@ -48,7 +48,6 @@
     <li><a data-toggle = "pill" href="#menu3">Your Calendar</a></li>
   </ul>
   <!-- MENU SECTION END-->
-
 
  {{!-- Content Page --}}
   <div class="tab-content">
@@ -141,28 +140,22 @@
           </div>
 
           <br>
-          <button  type="button" class="btn btn-success btn-xs" onclick="getAllIngredients();">Let's see what we can make!</button>
+          <button  type="button" class="sr btn btn-success btn-xs" onclick="getAllIngredients();">Let's see what we can make!</button>
 
         </div>
 
-        <div class="col-md-6 col-sm-6 col-xs-6">
-          <h2 class = "h2">Main user interface</h2>
-          <div id = "recipes"></div>
-          <div>test</div>
+        <div class="col-md-9 col-sm-9 col-xs-9">
+          <h2 class = "h2">Main user interface</h2>     
+          <div class="col2" id = "recipes"></div>
+          <div>test</div>          
         </div>
 
-        <div class="col-md-3 col-sm-3 col-xs-3">
-          <h2 class="h2">Favorites</h2>
-          <div id = "favorites"></div>
-        </div>
-
-      </div>
+       </div>
     </div>
   </div>
 
-
-
   <div id="menu2" class="tab-pane fade">
+
     <h3>Meal prep</h3>
     {{!-- <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p> --}}
       <div id = "favorites2"></div>
