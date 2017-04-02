@@ -23,11 +23,6 @@ function doIt(ingredients) {
                         name.setAttribute('id','recipeName');
                         recipeDIV.appendChild(name);
 
-/*                        var recipeImage = document.createElement("img");
-                        recipeImage.setAttribute('src',data.image);
-                        recipeImage.setAttribute('id','image');
-                        recipeDIV.appendChild(recipeImage);*/
-
                         var recipeLink = document.createElement("a");
                         recipeLink.setAttribute('href',data.sourceUrl);                        
                         recipeLink.setAttribute('target','_blank');
@@ -114,16 +109,11 @@ function addRecipe(id){
             name.setAttribute('id','recipeName');
             recipeDIV.appendChild(name);
 
-            var recipeImage = document.createElement("img");
-            recipeImage.setAttribute('src',data.image);
-            recipeImage.setAttribute('id','image');
-            recipeDIV.appendChild(recipeImage);
-
             var recipeLink = document.createElement("a");
-            recipeLink.setAttribute('href',data.sourceUrl);
-            recipeLink.setAttribute('id','link');
+            recipeLink.setAttribute('href',data.sourceUrl);                        
             recipeLink.setAttribute('target','_blank');
-            recipeLink.innerHTML = "View Recipe";
+            recipeLink.setAttribute('id','link');
+            recipeLink.innerHTML = "<img id = \"image\" src =" + data.image + ">";
             recipeDIV.appendChild(recipeLink);
 
             var calories = document.createElement("p");
@@ -140,19 +130,22 @@ function addRecipe(id){
 
             var rm = document.createElement("BUTTON");
             rm.setAttribute('id','removeFav');
+            rm.className = "btn btn-default btn-sm";
             rm.setAttribute('onclick','removeFav();');
-            rm.innerHTML = "Remove From Favorite";
+            rm.innerHTML = "<span class =\"glyphicon glyphicon-trash\"></span>";
+
             recipeDIV.appendChild(rm);
 
             var br = document.createElement("BR");
             recipeDIV.appendChild(br);
+            recipeDIV.className = "col-md-4 col-sm-4 col-xs-4";
 
             var element = document.getElementById("favorites");
             element.appendChild(recipeDIV);
             
             localStorage.setItem('test', element);
 
-            recipeDIV.setAttribute('id','recipeInfo')
+            recipeDIV.setAttribute('id','FavRecipeInfo')
             rm.onclick = function(){
                 removeFav(data.id);
                 element.removeChild(recipeDIV);
