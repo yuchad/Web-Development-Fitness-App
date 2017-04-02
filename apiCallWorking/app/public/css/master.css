@@ -114,3 +114,30 @@ button {
 .jumbotron{
   background-color: #FA7921;
 }
+
+/*Get Started*/
+.icon{
+  text-align: center;
+  margin: auto;
+}
+
+.logo-get-started{
+  float:none;
+  margin: auto;
+}
+#getStarted{
+   background-color: #FA7921;
+}
+
+.get-started{
+  color:white;
+   background:rgba(1,1,1,0.5);
+   padding: 20px 20px 20px 20px;
+   border-radius: 30px;
+   width: 30%;
+   height:30%;
+   margin-left: 10px;
+   margin-right: 10px;
+   margin-bottom: 10px;
+
+}
