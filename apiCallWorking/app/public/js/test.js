@@ -140,7 +140,7 @@ function addRecipe(id){
             recipeDIV.appendChild(br);
             recipeDIV.className = "col-md-4 col-sm-4 col-xs-4";
 
-            var element = document.getElementById("favorites");
+            var element = document.getElementById("favorites2");
             element.appendChild(recipeDIV);
             
             localStorage.setItem('test', element);
