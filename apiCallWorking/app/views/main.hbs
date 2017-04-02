@@ -18,8 +18,16 @@
         <li><p class="navbar-text">Welcome {{ username }}</p></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Settings</a></li>
-        <li><a href="#">Logout</a></li>
+        <li><a href="#">
+          <form method="post" action="/settings">
+              <button type="submit">Settings</button>
+          </form>
+        </a></li>
+        <li><a href="#">
+          <form method="post" action="/logout">
+              <button type="submit">Logout</button>
+          </form>
+        </a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
