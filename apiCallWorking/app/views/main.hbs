@@ -15,7 +15,7 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><p class="navbar-text">Welcome {{ username }}</p></li>
+        <li><p class="navbar-text">Welcome {{ user.username }}</p></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">
@@ -53,54 +53,45 @@
  {{!-- Content Page --}}
   <div class="tab-content">
     <div id="home" class="tab-pane fade in active text-center">
-      
-      <div class="jumbotron">
-        <div class="container text-center">  
-          <img src="">
-          <h1>Welcome Back!</h1>      
-        </div> 
-      </div>
 
-      <div class="row-prof">
-        <img src="/Images/user.png" class="profile-pic img-responsive img-circle" height="150" width="150">
-        <h1 class="profileName" >{{ username }}</h1>
-      </div>
-
-      <div class="row-cals">
-        <div class="col-md-6"> 
-          <img src="/Images/calories.png" class="profile-pic-info img-responsive" height="100" width="100">
-          <h1>Calories A Day </h1>
-          <h1 class="bold-cal">1300</h1>
-          
+      <div class="row">
+        <div class="col-md-4 col-sx-4">
+          <div class="row-prof">
+            <img src="/Images/user.png" class="profile-pic img-responsive img-circle" height="150" width="150">
+            <h1 class="profileName" >{{ user.username }}</h1>
+          </div>
         </div>
-        <div class="col-md-6">
-           <img src="/Images/goal.png" class="profile-pic-info img-responsive" height="100" width="100">
-          <h1>Calories Goal A Day</h1>
-          <h1 class="bold-cal">1200</h1>
+        <div class="col-md-8 col-sx-8">
+          <div class="row-cals">
+              <div class="col-md-6">
+                <img src="/Images/calories.png" class="profile-pic-info img-responsive" height="100" width="100">
+                <h4>Calories needed to maintain weight</h4>
+                <h1 class="bold-cal">{{ user.maintain }}</h1>
+              </div>
+              <div class="col-md-6">
+                 <img src="/Images/goal.png" class="profile-pic-info img-responsive" height="100" width="100">
+                <h4>Calories needed to acheive our goal</h4>
+                <h1 class="bold-cal">{{ user.goal }}</h1>
+              </div>
         </div>
       </div>
-
+    </div>
     <div class="row-info">
       <div class="col-md-4">
         <img src="/Images/age.png" class="profile-pic-info img-responsive" height="60" width="60">
-        <h1>Age</h1>
-        <h1 class="bold-cal">22</h1>
-        <h1 class="bold"> Years Old</h1>
+        <h3>Age</h3>
+        <h1 class="bold-cal">{{ user.age }}</h1>
       </div>
-
       <div class="col-md-4">
         <img src="/Images/weight.png" class="profile-pic-info img-responsive " height="60" width="60">
-        <h1>Weight</h1>
-        <h1 class="bold-cal">88</h1>
-        <h1 class="bold">kg</h1>
+        <h3>Weight</h3>
+        <h1 class="bold-cal">{{ user.weight }}<span id="units">Kg</span></h1>
       </div>
-
       <div class="col-md-4">
         <img src="/Images/height1.png" class="profile-pic-info img-responsive " height="60" width="60">
-        <h1>Height</h1>
-        <h1 class="bold-cal">130</h1>
-        <h1 class="bold">cm</h1>
-      </div>          
+        <h3>Height</h3>
+        <h1 class="bold-cal">{{ user.height }}<span id="units">cm</span></h1>
+      </div>
     </div>
     </div>
 
@@ -181,8 +172,8 @@
  </div>
   <input class="form-control" id="single-input" value="" placeholder="Now">
   <!--<button type="button" id="check-minutes">Check the minutes</button>-->
-       
-  
+
+
   </div>
 
 
@@ -198,9 +189,9 @@
     <pre id="content"></pre>
 
     <div id='calendar'></div>
-    
+
     <script type="text/javascript">
-    
+
       events: [
         {
           title: 'All Day Event',
@@ -259,7 +250,7 @@
       ]
     /* global $ */
     $(document).ready(function() {
-      
+
       $('#calendar').fullCalendar({
         header: {
           left: 'prev,next today',
@@ -270,11 +261,11 @@
         navLinks: true, // can click day/week names to navigate views
         editable: true,
         eventLimit: true, // allow "more" link when too many events
-        
+
       });
-      
+
     });
-    
+
 
       // Client ID and API key from the Developer Console
       var CLIENT_ID = '895501991573-jfffltlers3refnm8klrl9iog9fbskgr.apps.googleusercontent.com';
@@ -362,7 +353,7 @@
        * the authorized user's calendar. If no events are found an
        * appropriate message is printed.
        */
-       
+
 
 
       function listUpcomingEvents() {
@@ -390,15 +381,15 @@
             appendPre('No upcoming events found.');
           }
         });
-        
+
       }
-  
+
     </script>
 
     <script async defer src="https://apis.google.com/js/api.js"
       onload="this.onload=function(){};handleClientLoad()"
       onreadystatechange="if (this.readyState === 'complete') this.onload()">
-    </script>   
+    </script>
     <script language="javascript" type="text/javascript" href="/js/calendar.js"></script>
   </div>
 
@@ -430,7 +421,7 @@
           autoclose: true,
           'default': 'now'
       });
-    
+
     });
   </script>
 

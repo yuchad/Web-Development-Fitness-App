@@ -72,9 +72,24 @@ button {
 }
 
 /*Home Page*/
-.col-md-6{
+.col-md-8 {
+  padding-top: 7%;
+}
 
-  margin: 10px 0px 10px 0px;
+.col-md-4 {
+  text-align: center;
+}
+
+#units {
+  font-size: 12px;
+}
+
+.navbar, .container {
+  margin:0;
+}
+
+.col-md-6{
+  margin: 0;
   border-radius: 100px;
 }
 .col-md-4{
@@ -97,17 +112,14 @@ button {
 }
 
 .bold-cal{
-  font-size: 100px;
   color: #FA7921;
 }
 
 .bold{
-  font-size: 20px;
   color: #FA7921;
 }
 
 .profileName{
-  font-size: 100px;
   color: #E55934;
 }
 
