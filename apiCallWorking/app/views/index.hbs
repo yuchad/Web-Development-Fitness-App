@@ -1,200 +1,55 @@
-<div class="navbar navbar-inverse set-radius-zero">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="index.hbs">
-
-        
-      </a>
-
-    </div>
-
-    <div class="left-div">
-      <div class="user-settings-wrapper">
-        <ul class="nav">
-
-          <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
-              <span class="glyphicon glyphicon-user" style="font-size: 25px;"></span>
-            </a>
-            <div class="dropdown-menu dropdown-settings">
-              <div class="media">
-                <a class="media-left" href="#">
-                  <img src="assets/img/64-64.jpg" alt="" class="img-rounded" />
-                </a>
-                <div class="media-body">
-                  <h4 class="media-heading">Jhon Deo Alex </h4>
-                  <h5>Developer & Designer</h5>
-
-                </div>
-              </div>
-              <hr />
-              <h5><strong>Personal Bio : </strong></h5>
-              Anim pariatur cliche reprehen derit.
-              <hr />
-              <a href="#" class="btn btn-info btn-sm">Full Profile</a>&nbsp; <a href="login.html" class="btn btn-danger btn-sm">Logout</a>
-
-            </div>
-          </li>
-
-
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- LOGO HEADER END-->
-
- 
-{{!-- Start menu section --}}
+<img style="text-align:center;" class="brand" src="/Images/ezeatinv3.png" height="250" width="250"/>
 <div class="container">
-  <br>
- 
+  <div class="row">
+    <div class="col-md-1 col-xs-1">
 
-  <ul class="nav nav-pills nav-justified">
-    <li class="active"><a data-toggle = "pill" href="#home">Home</a></li>
-    <li><a data-toggle = "pill" href="#getStarted">Get Started</a></li>
-    <li><a data-toggle = "pill" href="#menu1">Find Recipes!</a></li>
-    <li><a data-toggle = "pill" href="#menu2">Menu 2</a></li>
-    <li><a data-toggle = "pill" href="#menu3">Menu 3</a></li>
-  </ul>
-  <!-- MENU SECTION END-->
+    </div>
+    <div class="col-md-4 col-xs-4 login">
+      <section class="insert">
+          <form action="/logged-in" method="post">
+              <h5>Already a user, login fuck face</h5>
+              {{ data }}
+              <p>
+                <label for="usernamesignup" class="uname" data-icon="u">Your username</label><br>
+                <input id="username" name="username" required="required" type="text" placeholder="Enter username" />
+              </p>
+              <p>
+                <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label><br>
+                <input id="password" name="password" required="required" type="text" placeholder="eg. X8df!90EO"/>
+              </p>
+              <button type="submit">Login</button>
+          </form>
+      </section>
+    </div>
+    <div class="col-md-2 col-xs-2">
 
+    </div>
+    <div class="col-md-4 col-xs-4 newuser">
+      <section class="registration">
+        <form  action="/newUser" method="post" autocomplete="on">
+                <h5> Sign up then cunt</h5>
+                <p>
+                  <label for="usernamesignup" class="uname" data-icon="u">Your username</label><br>
+                  <input id="username" name="username" required="required" type="text" placeholder="Enter username" />
+                </p>
+                <p>
+                  <label for="emailsignup" class="youmail" data-icon="e" > Your email</label><br>
+                  <input id="email" name="email" required="required" type="email" placeholder="myemail@mail.com"/>
+                </p>
+                <p>
+                  <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label><br>
+                  <input id="password" name="password" required="required" type="text" placeholder="eg. X8df!90EO"/>
+                </p>
+                <p>
+                  <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label><br>
+                  <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="text" placeholder="eg. X8df!90EO"/>
+                </p>
+                <button type="submit">Sign up</button>
+        </form>
+      </section>
+    </div>
+    <div class="col-md-1 col-xs-1">
 
- {{!-- Content Page --}}
-  <div class="tab-content">
-    <div id="home" class="tab-pane fade in active">
-
-     
-      <h2 class = "text-center">Welcome to your Dashboard!</h2>
-     
-      <h1>Here are your daily shit fham!!!!</h1>
-
-      <h1> CLick on the get started tab to begin</h1>
-
-
-      
-   </div>
-
-  <div id ="getStarted" class="tab-pane fade">
-    <div class="row">
-        <div class="col-sm-4"></div>
-         <div class="col-sm-4"><br>
-          <h3>Let's get started with some simple steps! </h3>
-          
-          <br>
-
-            <img class="img-responsive" src="Images/ezeatinv3.png" height="200" width="200"  />
-
-         </div>
-        <div class="col-sm-4"></div>
-      </div>
-      <br>
-      <div class="row">
-        <div class="col-sm-4">
-          <span class="glyphicon glyphicon-search" style="font-size: 50px; text-center"></span>
-          <h3>Let's search for some recipes using the Find Recipes tab!</h3>
-
-        </div>
-        <div class="col-sm-4">
-          <span class="glyphicon glyphicon-shopping-cart " style="font-size: 50px;"></span>
-          <h3>After you enter your ingredients, simply add them to your cart</h3>
-        </div>
-        <div class="col-sm-4">
-          <span class="glyphicon glyphicon-thumbs-up" style="font-size: 50px;"></span>
-          <h3>Simply add the meal to your wanted date and time</h3>
-        </div>
-      </div>
-  </div>
-
-   
-    <div id="menu1" class="tab-pane fade">
-     <div style="display:none;" id="data" >{{data}}</div>
-
-     <div class="container-fluid">
-      <div class="row">
-
-        <div class="col-md-3 col-sm-3 col-xs-3">
-
-          <div id="ingredientsList">
-            <h5>Enter your ingredients</h5>
-            <input id="search" placeholder="Enter item" onkeyup="newIngredient(event);">
-          </div>
-
-          <br>
-          <button  type="button" class="btn btn-success btn-xs" onclick="getAllIngredients();">Let's see what we can make!</button>
-
-        </div>
-
-        <div class="col-md-6 col-sm-6 col-xs-6">
-          <h2 class = "h2">Main user interface</h2>
-          <div id = "recipes"></div>
-          <div>test</div>
-        </div>
-
-        <div class="col-md-3 col-sm-3 col-xs-3">
-          <h2 class="h2">Favorites</h2>
-          <div id = "favorites"></div>
-        </div>
-
-      </div>
     </div>
   </div>
-  
-
-
-  <div id="menu2" class="tab-pane fade">
-    <h3>Menu 2</h3>
-    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-  </div>
-
-
-  <div id="menu3" class="tab-pane fade">
-    <h3>Menu 3</h3>
-    <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-  </div>
 </div>
-</div>
-</div>
-{{!-- End contents --}}
-
-<script>
-  var ingredients = document.getElementById("data").innerHTML;
-  ingredients = JSON.parse(ingredients);
-  $.getScript('/js/awesomplete.js', function()
-  {
-    var input = document.getElementById("search");
-    new Awesomplete(input, {
-      list: ingredients
-    });
-    console.log("Suggestion bar ready");
-  });
-</script>
-
-{{!-- <section class="insert">
-    <h3>Insert Data</h3>
-    <form action="/insert" method="post">
-        <div class="input">
-            <label for="title">Title</label>
-            <input type="text" id="ingredients" name="ingredients">
-        </div>
-        <button type="submit">INSERT</button>
-    </form>
-</section>
-
-
-{{!--<section class="get">--}}
-{{!--    <h3>Get Data</h3>--}}
-{{!--    <a href="/get-data">LOAD DATA</a>--}}
-{{!--    <div>--}}
-{{!--        {{# each items }}--}}
-{{!--            <article class="item">--}}
-{{!--                <div>Title: {{ this.title }}</div>--}}
-{{!--            </article>--}}
-{{!--        {{/each}}--}}
-{{!--    </div>--}}
-{{!--</section>--}}
