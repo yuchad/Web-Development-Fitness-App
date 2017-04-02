@@ -1,7 +1,15 @@
 
 
+
 body {
-  text-align: center;
+  /*
+   background:url('../Images/kitchen-background.jpg') no-repeat center center;
+  min-height:100%;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  text-align: center;*/
 }
 
 .login {
@@ -61,4 +69,48 @@ button {
 .awesomplete {
   width: 100%;
   padding: 2%;
+}
+
+/*Home Page*/
+.col-md-6{
+
+  margin: 10px 0px 10px 0px;
+  border-radius: 100px;
+}
+.col-md-4{
+  margin: 50px 0px 10px 0px;
+  border-radius: 100px;
+}
+
+.profile-pic{
+  float:none;
+  margin: auto;
+  background-color: #E55934;
+
+}
+
+.profile-pic-info{
+  border-radius: 300px;
+  float:none;
+  margin: auto;
+  background-color: #FA7921;
+}
+
+.bold-cal{
+  font-size: 100px;
+  color: #FA7921;
+}
+
+.bold{
+  font-size: 20px;
+  color: #FA7921;
+}
+
+.profileName{
+  font-size: 100px;
+  color: #E55934;
+}
+
+.jumbotron{
+  background-color: #FA7921;
 }
