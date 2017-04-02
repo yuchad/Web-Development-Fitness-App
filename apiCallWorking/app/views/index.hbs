@@ -1,9 +1,18 @@
+<<<<<<< HEAD
+=======
 <img style="text-align:center;" class="brand" src="/Images/ezeatinv3.png" height="250" width="250"/>
+>>>>>>> c9dd60e062c09f0e1a4a9eff4d06c5538916bd52
 <div class="container">
   <div class="row">
     <div class="col-md-1 col-xs-1">
 
     </div>
+<<<<<<< HEAD
+    <div class="col-md-6 col-sm-6 col-xs-6">
+      <h2 class = "h2">Main user interface</h2>
+      <button id ="fav"> View Favorite </button> 
+      <div id = "recipes"></div>
+=======
     <div class="col-md-4 col-xs-4 login">
       <section class="insert">
           <form action="/logged-in" method="post">
@@ -20,10 +29,20 @@
               <button type="submit">Login</button>
           </form>
       </section>
+>>>>>>> c9dd60e062c09f0e1a4a9eff4d06c5538916bd52
     </div>
     <div class="col-md-2 col-xs-2">
 
     </div>
+<<<<<<< HEAD
+  </div>
+</div>
+
+
+    <div id="menu2" class="tab-pane fade">
+      <h3>Menu 2</h3>
+      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+=======
     <div class="col-md-4 col-xs-4 newuser">
       <section class="registration">
         <form  action="/newUser" method="post" autocomplete="on">
@@ -47,9 +66,29 @@
                 <button type="submit">Sign up</button>
         </form>
       </section>
+>>>>>>> c9dd60e062c09f0e1a4a9eff4d06c5538916bd52
     </div>
     <div class="col-md-1 col-xs-1">
 
     </div>
   </div>
 </div>
+<<<<<<< HEAD
+</div>
+
+
+<script>
+  var ingredients = document.getElementById("data").innerHTML;
+  ingredients = JSON.parse(ingredients);
+  $.getScript('/js/awesomplete.js', function()
+    {
+      var input = document.getElementById("search");
+      new Awesomplete(input, {
+        list: ingredients
+      });
+      console.log("Suggestion bar ready");
+    });
+</script>
+
+=======
+>>>>>>> c9dd60e062c09f0e1a4a9eff4d06c5538916bd52
