@@ -32,7 +32,7 @@
   <br>
 
 
-  <ul class="nav nav-pills nav-justified">
+  <ul class="list-home nav nav-pills nav-justified">
     <li class="active"><a data-toggle = "pill" href="#home">Home</a></li>
     <li><a data-toggle = "pill" href="#getStarted">Get Started</a></li>
     <li><a data-toggle = "pill" href="#menu1">Find Recipes!</a></li>
@@ -44,49 +44,88 @@
 
  {{!-- Content Page --}}
   <div class="tab-content">
-    <div id="home" class="tab-pane fade in active">
-
-
-      <h2>Welcome to your Dashboard!</h2>
-
-      <h1>Here are your daily shit fham!!!!</h1>
-
-      <h1> CLick on the get started tab to begin</h1>
-
-
-
-   </div>
-
-  <div id ="getStarted" class="tab-pane fade">
-    <div class="row">
-        <div class="col-sm-4"></div>
-         <div class="col-sm-4"><br>
-          <h3>Let's get started with some simple steps! </h3>
-
-          <br>
-
-            <img class="img-responsive" src="/Images/ezeatinv3.png" height="200" width="200"  />
-
-         </div>
-        <div class="col-sm-4"></div>
+    <div id="home" class="tab-pane fade in active text-center">
+      
+      <div class="jumbotron">
+        <div class="container text-center">  
+          <img src="">
+          <h1>Welcome Back!</h1>      
+        </div> 
       </div>
-      <br>
+
+      <div class="row-prof">
+        <img src="/Images/user.png" class="profile-pic img-responsive img-circle" height="150" width="150">
+        <h1 class="profileName" >{{ username }}</h1>
+      </div>
+
+      <div class="row-cals">
+        <div class="col-md-6"> 
+          <img src="/Images/calories.png" class="profile-pic-info img-responsive" height="100" width="100">
+          <h1>Calories A Day </h1>
+          <h1 class="bold-cal">1300</h1>
+          
+        </div>
+        <div class="col-md-6">
+           <img src="/Images/goal.png" class="profile-pic-info img-responsive" height="100" width="100">
+          <h1>Calories Goal A Day</h1>
+          <h1 class="bold-cal">1200</h1>
+        </div>
+      </div>
+
+    <div class="row-info">
+      <div class="col-md-4">
+        <img src="/Images/age.png" class="profile-pic-info img-responsive" height="60" width="60">
+        <h1>Age</h1>
+        <h1 class="bold-cal">22</h1>
+        <h1 class="bold"> Years Old</h1>
+      </div>
+
+      <div class="col-md-4">
+        <img src="/Images/weight.png" class="profile-pic-info img-responsive " height="60" width="60">
+        <h1>Weight</h1>
+        <h1 class="bold-cal">88</h1>
+        <h1 class="bold">kg</h1>
+      </div>
+
+      <div class="col-md-4">
+        <img src="/Images/height1.png" class="profile-pic-info img-responsive " height="60" width="60">
+        <h1>Height</h1>
+        <h1 class="bold-cal">130</h1>
+        <h1 class="bold">cm</h1>
+      </div>          
+    </div>
+    </div>
+
+    <div id ="getStarted" class="tab-pane fade">
       <div class="row">
-        <div class="col-sm-4">
-          <span class="glyphicon glyphicon-search" style="font-size: 50px; text-center"></span>
-          <h3>Let's search for some recipes using the Find Recipes tab!</h3>
+          <div class="col-sm-4"></div>
+           <div class="col-sm-4"><br>
+            <h3>Let's get started with some simple steps! </h3>
 
+            <br>
+
+              <img class="img-responsive" src="/Images/ezeatinv3.png" height="200" width="200"  />
+
+           </div>
+          <div class="col-sm-4"></div>
         </div>
-        <div class="col-sm-4">
-          <span class="glyphicon glyphicon-shopping-cart " style="font-size: 50px;"></span>
-          <h3>After you enter your ingredients, simply add them to your cart</h3>
+        <br>
+        <div class="row">
+          <div class="col-sm-4">
+            <span class="glyphicon glyphicon-search" style="font-size: 50px; text-center"></span>
+            <h3>Let's search for some recipes using the Find Recipes tab!</h3>
+
+          </div>
+          <div class="col-sm-4">
+            <span class="glyphicon glyphicon-shopping-cart " style="font-size: 50px;"></span>
+            <h3>After you enter your ingredients, simply add them to your cart</h3>
+          </div>
+          <div class="col-sm-4">
+            <span class="glyphicon glyphicon-thumbs-up" style="font-size: 50px;"></span>
+            <h3>Simply add the meal to your wanted date and time</h3>
+          </div>
         </div>
-        <div class="col-sm-4">
-          <span class="glyphicon glyphicon-thumbs-up" style="font-size: 50px;"></span>
-          <h3>Simply add the meal to your wanted date and time</h3>
-        </div>
-      </div>
-  </div>
+    </div>
 
 
     <div id="menu1" class="tab-pane fade">
