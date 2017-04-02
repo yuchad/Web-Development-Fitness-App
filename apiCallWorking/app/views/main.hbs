@@ -1,0 +1,177 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><img class="img-responsive img-thumbnail" src="/Images/ezeatinv3.png" height="40" width="40"/></a>
+      <a class="navbar-brand" href="#">EzyEats</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li><p class="navbar-text">Welcome {{ username }}</p></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#">Settings</a></li>
+        <li><a href="#">Logout</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+<!-- LOGO HEADER END-->
+
+
+{{!-- Start menu section --}}
+<div class="container">
+  <br>
+
+
+  <ul class="nav nav-pills nav-justified">
+    <li class="active"><a data-toggle = "pill" href="#home">Home</a></li>
+    <li><a data-toggle = "pill" href="#getStarted">Get Started</a></li>
+    <li><a data-toggle = "pill" href="#menu1">Find Recipes!</a></li>
+    <li><a data-toggle = "pill" href="#menu2">Menu 2</a></li>
+    <li><a data-toggle = "pill" href="#menu3">Menu 3</a></li>
+  </ul>
+  <!-- MENU SECTION END-->
+
+
+ {{!-- Content Page --}}
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+
+
+      <h2>Welcome to your Dashboard!</h2>
+
+      <h1>Here are your daily shit fham!!!!</h1>
+
+      <h1> CLick on the get started tab to begin</h1>
+
+
+
+   </div>
+
+  <div id ="getStarted" class="tab-pane fade">
+    <div class="row">
+        <div class="col-sm-4"></div>
+         <div class="col-sm-4"><br>
+          <h3>Let's get started with some simple steps! </h3>
+
+          <br>
+
+            <img class="img-responsive" src="/Images/ezeatinv3.png" height="200" width="200"  />
+
+         </div>
+        <div class="col-sm-4"></div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-sm-4">
+          <span class="glyphicon glyphicon-search" style="font-size: 50px; text-center"></span>
+          <h3>Let's search for some recipes using the Find Recipes tab!</h3>
+
+        </div>
+        <div class="col-sm-4">
+          <span class="glyphicon glyphicon-shopping-cart " style="font-size: 50px;"></span>
+          <h3>After you enter your ingredients, simply add them to your cart</h3>
+        </div>
+        <div class="col-sm-4">
+          <span class="glyphicon glyphicon-thumbs-up" style="font-size: 50px;"></span>
+          <h3>Simply add the meal to your wanted date and time</h3>
+        </div>
+      </div>
+  </div>
+
+
+    <div id="menu1" class="tab-pane fade">
+     <div style="display:none;" id="data" >{{data}}</div>
+
+     <div class="container-fluid">
+      <div class="row">
+
+        <div class="col-md-3 col-sm-3 col-xs-3">
+
+          <div id="ingredientsList">
+            <h5>Enter your ingredients</h5>
+            <input id="search" placeholder="Enter item" onkeyup="newIngredient(event);">
+          </div>
+
+          <br>
+          <button  type="button" class="btn btn-success btn-xs" onclick="getAllIngredients();">Let's see what we can make!</button>
+
+        </div>
+
+        <div class="col-md-6 col-sm-6 col-xs-6">
+          <h2 class = "h2">Main user interface</h2>
+          <div id = "recipes"></div>
+          <div>test</div>
+        </div>
+
+        <div class="col-md-3 col-sm-3 col-xs-3">
+          <h2 class="h2">Favorites</h2>
+          <div id = "favorites"></div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <div id="menu2" class="tab-pane fade">
+    <h3>Menu 2</h3>
+    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
+  </div>
+
+
+  <div id="menu3" class="tab-pane fade">
+    <h3>Menu 3</h3>
+    <p>Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+  </div>
+</div>
+</div>
+</div>
+{{!-- End contents --}}
+
+<script>
+  var ingredients = document.getElementById("data").innerHTML;
+  ingredients = JSON.parse(ingredients);
+  $.getScript('/js/awesomplete.js', function()
+  {
+    var input = document.getElementById("search");
+    new Awesomplete(input, {
+      list: ingredients
+    });
+    console.log("Suggestion bar ready");
+  });
+</script>
+
+{{!-- <section class="insert">
+    <h3>Insert Data</h3>
+    <form action="/insert" method="post">
+        <div class="input">
+            <label for="title">Title</label>
+            <input type="text" id="ingredients" name="ingredients">
+        </div>
+        <button type="submit">INSERT</button>
+    </form>
+</section>
+
+
+{{!--<section class="get">--}}
+{{!--    <h3>Get Data</h3>--}}
+{{!--    <a href="/get-data">LOAD DATA</a>--}}
+{{!--    <div>--}}
+{{!--        {{# each items }}--}}
+{{!--            <article class="item">--}}
+{{!--                <div>Title: {{ this.title }}</div>--}}
+{{!--            </article>--}}
+{{!--        {{/each}}--}}
+{{!--    </div>--}}
+{{!--</section>--}}

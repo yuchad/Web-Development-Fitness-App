@@ -1,5 +1,33 @@
+body {
+  text-align: center;
+}
+
+.login, .newuser {
+  border: 2px dashed black;
+  text-align: left;
+}
+
 #ingredientsList div {
   display: -webkit-box;
+}
+
+.image-responsive{
+  width:100%;
+  text-align: center !important;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.brand{
+  text-align: center !important;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.container {
+  width: 100%;
+  padding: 0 !important;
+  margin: 0 !important;
 }
 
 .col-md-3 {
