@@ -147,7 +147,7 @@ function addRecipe(id){
             var br = document.createElement("BR");
             recipeDIV.appendChild(br);
 
-            var element = document.getElementById("favorites");
+            var element = document.getElementById("favorites2");
             element.appendChild(recipeDIV);
 
             recipeDIV.setAttribute('id','recipeInfo')

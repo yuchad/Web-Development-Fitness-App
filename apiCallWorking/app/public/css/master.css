@@ -1,15 +1,15 @@
 
 
-body {
+/*body {
    background:url('../Images/kitchen-background.jpg') no-repeat center center;
-    /* Ensure the html element always takes up the full height of the browser window */
+     Ensure the html element always takes up the full height of the browser window 
   min-height:100%;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
   text-align: center;
-}
+}*/
 
 .login {
   text-align: left;
