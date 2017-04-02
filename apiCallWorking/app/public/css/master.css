@@ -2,8 +2,12 @@
 
 
 body {
+   background:url('') no-repeat center center;
+    /* Ensure the html element always takes up the full height of the browser window */
+
   /*
    background:url('../Images/kitchen-background.jpg') no-repeat center center;
+
   min-height:100%;
   -webkit-background-size: cover;
   -moz-background-size: cover;

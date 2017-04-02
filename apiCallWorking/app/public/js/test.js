@@ -23,6 +23,13 @@ function doIt(ingredients) {
                         name.setAttribute('id','recipeName');
                         recipeDIV.appendChild(name);
 
+                        var recipeLink = document.createElement("a");
+                        recipeLink.setAttribute('href',data.sourceUrl);                        
+                        recipeLink.setAttribute('target','_blank');
+                        recipeLink.setAttribute('id','link');
+                        recipeLink.innerHTML = "<img id = \"image\" src =" + data.image + ">";
+                        recipeDIV.appendChild(recipeLink);
+
                         var calories = document.createElement("p");
                         var node = document.createTextNode("Calories: " + data.nutrition.nutrients[0].amount);
                         calories.appendChild(node);
@@ -35,35 +42,22 @@ function doIt(ingredients) {
                         time.setAttribute('id','time');
                         recipeDIV.appendChild(time);
 
-                        var recipeImage = document.createElement("img");
-                        recipeImage.setAttribute('src',data.image);
-                        recipeImage.setAttribute('id','image');
-                        recipeDIV.appendChild(recipeImage);
-
-                        var recipeLink = document.createElement("a");
-                        recipeLink.setAttribute('href',data.sourceUrl);
-                        recipeLink.setAttribute('id','link');
-                        recipeLink.innerHTML = "View Recipe";
-                        recipeDIV.appendChild(recipeLink);
-
                         var fav = document.createElement("BUTTON");
                         fav.setAttribute('id','favorite');
+                        fav.className = "btn btn-default btn-sm";
                         fav.setAttribute('onclick','addFav();');
                         fav.onclick = function(){
                             addFav(data.id);
                         };
-                        fav.innerHTML = "Add to Favorite";
+                        
+                        fav.innerHTML = "<span class =\"glyphicon glyphicon-star\"></span>";
+
                         recipeDIV.appendChild(fav);
                         recipeDIV.setAttribute('id','recipeInfo');
+                        recipeDIV.className = "col-md-6 col-sm-6 col-xs-6";
 
                         var element = document.getElementById("recipes");
                         element.appendChild(recipeDIV);
-                        var br = document.createElement("BR");
-                        element.appendChild(br);
-                        var br = document.createElement("BR");
-                        element.appendChild(br);
-                        var br = document.createElement("BR");
-                        element.appendChild(br);
                     },
                     error: function(err) { alert(err); },
                     beforeSend: function(xhr) {
@@ -115,6 +109,13 @@ function addRecipe(id){
             name.setAttribute('id','recipeName');
             recipeDIV.appendChild(name);
 
+            var recipeLink = document.createElement("a");
+            recipeLink.setAttribute('href',data.sourceUrl);                        
+            recipeLink.setAttribute('target','_blank');
+            recipeLink.setAttribute('id','link');
+            recipeLink.innerHTML = "<img id = \"image\" src =" + data.image + ">";
+            recipeDIV.appendChild(recipeLink);
+
             var calories = document.createElement("p");
             var node = document.createTextNode("Calories: " + data.nutrition.nutrients[0].amount);
             calories.appendChild(node);
@@ -127,30 +128,24 @@ function addRecipe(id){
             time.setAttribute('id','time');
             recipeDIV.appendChild(time);
 
-            var recipeImage = document.createElement("img");
-            recipeImage.setAttribute('src',data.image);
-            recipeImage.setAttribute('id','image');
-            recipeDIV.appendChild(recipeImage);
-
-            var recipeLink = document.createElement("a");
-            recipeLink.setAttribute('href',data.sourceUrl);
-            recipeLink.setAttribute('id','link');
-            recipeLink.innerHTML = "View Recipe";
-            recipeDIV.appendChild(recipeLink);
-
             var rm = document.createElement("BUTTON");
             rm.setAttribute('id','removeFav');
+            rm.className = "btn btn-default btn-sm";
             rm.setAttribute('onclick','removeFav();');
-            rm.innerHTML = "Remove From Favorite";
+            rm.innerHTML = "<span class =\"glyphicon glyphicon-trash\"></span>";
+
             recipeDIV.appendChild(rm);
 
             var br = document.createElement("BR");
             recipeDIV.appendChild(br);
+            recipeDIV.className = "col-md-4 col-sm-4 col-xs-4";
 
             var element = document.getElementById("favorites2");
             element.appendChild(recipeDIV);
+            
+            localStorage.setItem('test', element);
 
-            recipeDIV.setAttribute('id','recipeInfo')
+            recipeDIV.setAttribute('id','FavRecipeInfo')
             rm.onclick = function(){
                 removeFav(data.id);
                 element.removeChild(recipeDIV);
@@ -162,3 +157,4 @@ function addRecipe(id){
         }
     });
 }
+
