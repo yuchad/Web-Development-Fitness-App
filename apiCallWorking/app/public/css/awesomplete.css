@@ -169,6 +169,7 @@
 	color: black;
 }
 
+
 @media (max-width: 800px){
 	#recipeInfo{
 		width: 100%;
@@ -198,3 +199,4 @@
 	}
 
 }
+
