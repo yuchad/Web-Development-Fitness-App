@@ -128,10 +128,8 @@
 	margin-top: -7px;
 }	
 
-#recipeName{
+#recipeName, #favRecipeName{
 	position: absolute;
-    top: 50%;
-    width:80%;
     margin: 0 auto;
     background-color: rgba(0,0,0,0.75);
     color: white;
@@ -139,19 +137,38 @@
     padding: 2%;
 }
 
+#recipeName{	
+    top: 50%;
+    width:80%;
+}
+
+#favRecipeName{
+	top: 40%;
+	width: 70%;
+}
+
 #favorite, #removeFav{
 	text-align: center;
     padding: 0;
     position: absolute;
-    z-index: 10;
-    top: 50%;
-    right: 6%;
+    z-index: 10;    
     padding: 2%;
 }
+
+#favorite{
+	top: 50%;
+	right: 6%;
+}
+
+ #removeFav{
+ 	top: 40%;
+ 	right: 8%;
+ }
 
 #link{
 	color: black;
 }
+
 
 @media (max-width: 800px){
 	#recipeInfo{
@@ -170,5 +187,16 @@
 		width: 100%;
 		display: inline-block;
 	}
+}
+
+@media (max-width: 900px){
+	#recipeName{	
+	    width:70%;
+	}
+
+	#favorite{
+		right: 7%;
+	}
+
 }
 
