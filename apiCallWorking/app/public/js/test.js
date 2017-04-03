@@ -1,7 +1,7 @@
 function doIt(ingredients) {
     var recipeID, recipeTitle;
     var output = $.ajax({
-        url: 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=' + ingredients + '&limitLicense=false&number=10&ranking=1', // The URL to the API. You can get this by clicking on "Show CURL example" from an API profile
+        url: 'https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/findByIngredients?fillIngredients=false&ingredients=' + ingredients + '&limitLicense=false&number=12&ranking=1', // The URL to the API. You can get this by clicking on "Show CURL example" from an API profile
         type: 'GET', // The HTTP Method, can be GET POST PUT DELETE etc
         data: {}, // Additional parameters here
         dataType: 'json',
@@ -14,33 +14,54 @@ function doIt(ingredients) {
                     data: {}, // Additional parameters here
                     dataType: 'json',
                     success: function(data) {
-                        console.log(data);
-                        var recipeDIV = document.createElement("div");
+                        var card = document.createElement("div");
 
-                        var name = document.createElement("h4");
+                        var recipeImage = document.createElement("img");
+                        recipeImage.className = "card-img-top";
+                        recipeImage.setAttribute('src',data.image);                        
+                        recipeImage.setAttribute('alt','Card image cap');
+                        recipeImage.setAttribute('id','image');
+                        card.appendChild(recipeImage);
+
+                        var cardBlock = document.createElement("div");
+                        cardBlock.className = "card-block";
+
+                        var cardTitle = document.createElement("h4");
                         var node = document.createTextNode(data.title);
-                        name.appendChild(node);
-                        name.setAttribute('id','recipeName');
-                        recipeDIV.appendChild(name);
+                        cardTitle.appendChild(node);
+                        cardTitle.setAttribute('id','recipeName');
+                        cardTitle.className = "card-title";
+                        cardBlock.appendChild(cardTitle);
+
+                        card.appendChild(cardBlock);
+
+                        var ul = document.createElement("ul");
+                        ul.className = "list-group list-group-flush";
+
+                        var calories = document.createElement("li");
+                        calories.innerHTML = "Calories: " + data.nutrition.nutrients[0].amount;
+                        calories.setAttribute('id','calories');
+                        calories.className = "list-group-item";
+                        ul.appendChild(calories);
+
+                        var time = document.createElement("li");
+                        time.innerHTML = "Ready in: " + data.readyInMinutes + " minutes";
+                        time.setAttribute('id','time');
+                        time.className = "list-group-item";
+                        ul.appendChild(time);
+
+                        card.appendChild(ul);
+
+                        var cardBlock2 = document.createElement("div");
+                        cardBlock2.className = "card-block";
 
                         var recipeLink = document.createElement("a");
                         recipeLink.setAttribute('href',data.sourceUrl);                        
                         recipeLink.setAttribute('target','_blank');
                         recipeLink.setAttribute('id','link');
-                        recipeLink.innerHTML = "<img id = \"image\" src =" + data.image + ">";
-                        recipeDIV.appendChild(recipeLink);
-
-                        var calories = document.createElement("p");
-                        var node = document.createTextNode("Calories: " + data.nutrition.nutrients[0].amount);
-                        calories.appendChild(node);
-                        calories.setAttribute('id','calories');
-                        recipeDIV.appendChild(calories);
-
-                        var time = document.createElement("p");
-                        var node = document.createTextNode("Ready in: " + data.readyInMinutes + " minutes");
-                        time.appendChild(node);
-                        time.setAttribute('id','time');
-                        recipeDIV.appendChild(time);
+                        recipeLink.innerHTML = "View Recipe";
+                        recipeLink.className = "card-link";
+                        cardBlock2.appendChild(recipeLink);
 
                         var fav = document.createElement("BUTTON");
                         fav.setAttribute('id','favorite');
@@ -48,16 +69,20 @@ function doIt(ingredients) {
                         fav.setAttribute('onclick','addFav();');
                         fav.onclick = function(){
                             addFav(data.id);
-                        };
-                        
-                        fav.innerHTML = "<span class =\"glyphicon glyphicon-star\"></span>";
+                        };                        
+                        fav.innerHTML = "<span class =\"glyphicon glyphicon-star\"></span> Add to Favorite ";
+                        cardBlock2.appendChild(fav);
 
-                        recipeDIV.appendChild(fav);
-                        recipeDIV.setAttribute('id','recipeInfo');
-                        recipeDIV.className = "col-md-6 col-sm-6 col-xs-6";
+                        card.appendChild(cardBlock2);
+
+                        card.setAttribute('id','recipeInfo');
+                        card.className = "card col-md-4 col-sm-4 col-xs-4";
+
+                        var br = document.createElement("BR");
+                        card.appendChild(br);
 
                         var element = document.getElementById("recipes");
-                        element.appendChild(recipeDIV);
+                        element.appendChild(card);
                     },
                     error: function(err) { alert(err); },
                     beforeSend: function(xhr) {
@@ -100,60 +125,100 @@ function addRecipe(id){
         data: {}, // Additional parameters here
         dataType: 'json',
         success: function(data) {
-            //console.log(data);
-            var recipeDIV = document.createElement("div");
+            var card = document.createElement("div");
 
-            var name = document.createElement("h4");
+            var recipeImage = document.createElement("img");
+            recipeImage.className = "card-img-top";
+            recipeImage.setAttribute('src',data.image);                        
+            recipeImage.setAttribute('alt','Card image cap');
+            recipeImage.setAttribute('id','image');
+            card.appendChild(recipeImage);
+
+            var cardBlock = document.createElement("div");
+            cardBlock.className = "card-block";
+
+            var cardTitle = document.createElement("h4");
             var node = document.createTextNode(data.title);
-            name.appendChild(node);
-            name.setAttribute('id','favRecipeName');
-            recipeDIV.appendChild(name);
+            cardTitle.appendChild(node);
+            cardTitle.setAttribute('id','recipeName');
+            cardTitle.className = "card-title";
+            cardBlock.appendChild(cardTitle);
+
+            card.appendChild(cardBlock);
+
+            var ul = document.createElement("ul");
+            ul.className = "list-group list-group-flush";
+
+            var calories = document.createElement("li");
+            calories.innerHTML = "Calories: " + data.nutrition.nutrients[0].amount;
+            calories.setAttribute('id','calories');
+            calories.className = "list-group-item";
+            ul.appendChild(calories);
+
+            var time = document.createElement("li");
+            time.innerHTML = "Ready in: " + data.readyInMinutes + " minutes";
+            time.setAttribute('id','time');
+            time.className = "list-group-item";
+            ul.appendChild(time);
+
+            card.appendChild(ul);
+
+            var cardBlock2 = document.createElement("div");
+            cardBlock2.className = "card-block";
 
             var recipeLink = document.createElement("a");
             recipeLink.setAttribute('href',data.sourceUrl);                        
             recipeLink.setAttribute('target','_blank');
             recipeLink.setAttribute('id','link');
-            recipeLink.innerHTML = "<img id = \"image\" src =" + data.image + ">";
-            recipeDIV.appendChild(recipeLink);
-
-            var calories = document.createElement("p");
-            var node = document.createTextNode("Calories: " + data.nutrition.nutrients[0].amount);
-            calories.appendChild(node);
-            calories.setAttribute('id','calories');
-            recipeDIV.appendChild(calories);
-
-            var time = document.createElement("p");
-            var node = document.createTextNode("Ready in: " + data.readyInMinutes + " minutes");
-            time.appendChild(node);
-            time.setAttribute('id','time');
-            recipeDIV.appendChild(time);
+            recipeLink.innerHTML = "View Recipe";
+            recipeLink.className = "card-link";
+            cardBlock2.appendChild(recipeLink);
 
             var rm = document.createElement("BUTTON");
             rm.setAttribute('id','removeFav');
             rm.className = "btn btn-default btn-sm";
             rm.setAttribute('onclick','removeFav();');
-            rm.innerHTML = "<span class =\"glyphicon glyphicon-trash\"></span>";
-            recipeDIV.appendChild(rm);
+            rm.onclick = function(){
+            removeFav(data.id);
+            element.removeChild(card);
+            };                        
+            rm.innerHTML = "<span class =\"glyphicon glyphicon-trash\"></span> Remove ";
+            cardBlock2.appendChild(rm);
 
-            var dateTime = document.createElement("div");
-            dateTime.innerHTML = "<p>Date: <input type=\"text\" class=\"datepicker\"></p>" +
-                "<input class=\"single-input\" value=\"\" placeholder=\"Now\">"
-            recipeDIV.appendChild(dateTime);
+            card.appendChild(cardBlock2);
+            var br = document.createElement("BR");
+            card.appendChild(br);
+
+            card.setAttribute('id','recipeInfo');
+            card.className = "card col-md-4 col-sm-4 col-xs-4";
 
             var br = document.createElement("BR");
-            recipeDIV.appendChild(br);
-            recipeDIV.className = "col-md-4 col-sm-4 col-xs-4";
+            card.appendChild(br);
 
             var element = document.getElementById("favorites2");
-            element.appendChild(recipeDIV);
-            
-            
+            element.appendChild(card);
 
-            recipeDIV.setAttribute('id','FavRecipeInfo')
-            rm.onclick = function(){
-                removeFav(data.id);
-                element.removeChild(recipeDIV);
-            };
+            var cardBlock3 = document.createElement("div");
+            cardBlock3.className = "card-block";
+
+            var date = document.createElement("p");
+            date.className = "card-link";
+            date.innerHTML = "<p>Date: <input type=\"text\" class=\"datepicker\"></p>";
+            cardBlock3.appendChild(date);
+
+            var time = document.createElement("p");
+            time.className = "card-link";
+            time.innerHTML = "<p>Time: <input class=\"single-input\" value=\"\" placeholder=\"Now\"></p>";
+            cardBlock3.appendChild(time);
+
+            card.appendChild(cardBlock3);
+
+            var br = document.createElement("BR");
+            card.appendChild(br);
+            card.className = "card fav col-md-3 col-sm-3 col-xs-3";
+
+            var element = document.getElementById("favorites2");
+            element.appendChild(card);
         },
         error: function(err) { alert(err); },
         beforeSend: function(xhr) {
