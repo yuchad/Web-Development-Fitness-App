@@ -106,7 +106,7 @@ function addRecipe(id){
             var name = document.createElement("h4");
             var node = document.createTextNode(data.title);
             name.appendChild(node);
-            name.setAttribute('id','recipeName');
+            name.setAttribute('id','favRecipeName');
             recipeDIV.appendChild(name);
 
             var recipeLink = document.createElement("a");

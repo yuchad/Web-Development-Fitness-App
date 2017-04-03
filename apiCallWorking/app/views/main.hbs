@@ -409,7 +409,7 @@
 </script>
 
   <script type="text/javascript">
-    jQuery(document).ready(function($) {
+    $(document).bind('DOMNodeInserted', function() {
       var input = $('.single-input').clockpicker({
           placement: 'bottom',
           align: 'left',
@@ -421,8 +421,8 @@
   </script>
 
   <script type="text/javascript">
-    jQuery(document).ready(function($){
-       $( '.datepicker' ).datepicker();
+    $(document).bind('DOMNodeInserted', function(){
+       $('.datepicker').datepicker();
      });
   </script>
 
