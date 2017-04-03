@@ -48,7 +48,7 @@ router.get('/main', function(req, res, next) {
             }
             filteredArray = JSON.stringify(filteredArray);
             filteredArray = filteredArray.replace(/&quot;/g,"");
-            res.render('main', {data: filteredArray, username: doc.username});
+            res.render('main', {data: filteredArray, user: doc});
         });
       });
     });
