@@ -156,7 +156,9 @@
   <div id="menu2" class="tab-pane fade">
 
     <h3>Meal prep</h3>
+
     <div id = "favorites2"></div>  
+
 
   </div>
 
@@ -176,7 +178,22 @@
 
     <script type="text/javascript">
 
-      events: [
+  
+    /* global $ */
+    $(document).ready(function() {
+
+      $('#calendar').fullCalendar({
+        header: {
+          left: 'prev,next today',
+          center: 'title',
+          right: 'month,basicWeek,basicDay'
+        },
+        defaultDate: '2017-03-12',
+        navLinks: true, // can click day/week names to navigate views
+        editable: true,
+        eventLimit: true, // allow "more" link when too many events
+
+        events: [
         {
           title: 'All Day Event',
           start: '04/01/2017'
@@ -232,19 +249,6 @@
           start: '2017-03-28'
         }
       ]
-    /* global $ */
-    $(document).ready(function() {
-
-      $('#calendar').fullCalendar({
-        header: {
-          left: 'prev,next today',
-          center: 'title',
-          right: 'month,basicWeek,basicDay'
-        },
-        defaultDate: '2017-03-12',
-        navLinks: true, // can click day/week names to navigate views
-        editable: true,
-        eventLimit: true, // allow "more" link when too many events
 
       });
 
