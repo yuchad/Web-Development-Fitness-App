@@ -106,97 +106,49 @@
 /*# sourceMappingURL=awesomplete.css.map */
 #image{
 	width: 100%;
-	height: 200px;
-	position: relative;
+	height: 100px;
+}
+
+.card, .fav{
 	border: solid;
+	border-radius: 0;
+	margin: 10px;
+	padding: 10px;
+	background-color: white;
+}
+.card{
+	width: 25rem;
+	height: 330px;
 }
 
-#image:hover{
-	background-color: rgba(0,0,0,0.75);
+.fav{
+	width: 30rem;
+	height: 400px;
 }
 
-#link{
-	display:block;
-}
-
-.sr{
-	width: 100%;
-	overflow: hidden;
-}
-
-.navbar-brand>img {
-	margin-top: -7px;
-}	
-
-#recipeName, #favRecipeName{
-	position: absolute;
-    margin: 0 auto;
-    background-color: rgba(0,0,0,0.75);
-    color: white;
-    z-index: 10;
-    padding: 2%;
-}
-
-#recipeName{	
-    top: 50%;
-    width:80%;
-}
-
-#favRecipeName{
-	top: 40%;
-	width: 70%;
+#recipeInfo{
+	display: inline-block;
+	vertical-align: middle;
+	float:none;
 }
 
 #favorite, #removeFav{
-	text-align: center;
-    padding: 0;
-    position: absolute;
-    z-index: 10;    
-    padding: 2%;
+	float: right;
 }
-
-#favorite{
-	top: 50%;
-	right: 6%;
-}
-
- #removeFav{
- 	top: 40%;
- 	right: 8%;
- }
 
 #link{
-	color: black;
+
+	float: left;
+
 }
 
 
-@media (max-width: 800px){
-	#recipeInfo{
-		width: 100%;
-		display: inline-block;
-	}
-
-	#FavRecipeInfo{
-		width: 50%;
-		display: inline-block;
-	}
+#favorites2{
+	text-align: center;
 }
 
-@media (max-width: 650px){
-	#FavRecipeInfo{
-		width: 100%;
-		display: inline-block;
-	}
-}
 
-@media (max-width: 900px){
-	#recipeName{	
-	    width:70%;
-	}
-
-	#favorite{
-		right: 7%;
-	}
-
+h3{
+	text-align: center;
 }
 
