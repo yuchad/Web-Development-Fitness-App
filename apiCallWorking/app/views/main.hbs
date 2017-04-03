@@ -156,17 +156,7 @@
   <div id="menu2" class="tab-pane fade">
 
     <h3>Meal prep</h3>
-    {{!-- <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p> --}}
-
-      <div id = "favorites2"></div>  
-       
- <div>
-  <p>Date: <input type="text" id="datepicker"></p>
- </div>
-  <input class="form-control" id="single-input" value="" placeholder="Now">
-  <!--<button type="button" id="check-minutes">Check the minutes</button>-->
-
-
+    <div id = "favorites2"></div>  
 
   </div>
 
@@ -414,14 +404,18 @@
           align: 'left',
           autoclose: true,
           'default': 'now'
-      });
-
+        });
     });
   </script>
 
   <script type="text/javascript">
     $(document).bind('DOMNodeInserted', function(){
-       $('.datepicker').datepicker();
+       var input = $('.datepicker').datepicker({
+          placement: 'top',
+          align: 'left',
+          autoclose: true,
+          'default': 'now'
+          });
      });
   </script>
 
