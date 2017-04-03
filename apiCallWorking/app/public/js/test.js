@@ -133,8 +133,12 @@ function addRecipe(id){
             rm.className = "btn btn-default btn-sm";
             rm.setAttribute('onclick','removeFav();');
             rm.innerHTML = "<span class =\"glyphicon glyphicon-trash\"></span>";
-
             recipeDIV.appendChild(rm);
+
+            var dateTime = document.createElement("div");
+            dateTime.innerHTML = "<p>Date: <input type=\"text\" class=\"datepicker\"></p>" +
+                "<input class=\"single-input\" value=\"\" placeholder=\"Now\">"
+            recipeDIV.appendChild(dateTime);
 
             var br = document.createElement("BR");
             recipeDIV.appendChild(br);
@@ -143,7 +147,7 @@ function addRecipe(id){
             var element = document.getElementById("favorites2");
             element.appendChild(recipeDIV);
             
-            localStorage.setItem('test', element);
+            
 
             recipeDIV.setAttribute('id','FavRecipeInfo')
             rm.onclick = function(){

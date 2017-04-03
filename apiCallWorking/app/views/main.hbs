@@ -156,8 +156,7 @@
         <div class="col-md-9 col-sm-9 col-xs-9">
           <h2 class = "h2">Main user interface</h2>     
           <div class="col2" id = "recipes"></div>
-          <div>test</div>          
-        </div>
+       </div>
 
        </div>
     </div>
@@ -167,13 +166,7 @@
 
     <h3>Meal prep</h3>
     {{!-- <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p> --}}
-      <div id = "favorites2"></div>
-
- <div>
-  <p>Date: <input type="text" id="datepicker"></p>
- </div>
-  <input class="form-control" id="single-input" value="" placeholder="Now">
-  <!--<button type="button" id="check-minutes">Check the minutes</button>-->
+      <div id = "favorites2"></div>  
        
 
   </div>
@@ -417,7 +410,7 @@
 
   <script type="text/javascript">
     jQuery(document).ready(function($) {
-      var input = $('#single-input').clockpicker({
+      var input = $('.single-input').clockpicker({
           placement: 'bottom',
           align: 'left',
           autoclose: true,
@@ -429,10 +422,8 @@
 
   <script type="text/javascript">
     jQuery(document).ready(function($){
-       $( '#datepicker' ).datepicker();
+       $( '.datepicker' ).datepicker();
      });
-
-
   </script>
 
 {{!-- <section class="insert">
