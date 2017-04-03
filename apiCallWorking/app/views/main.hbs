@@ -156,12 +156,10 @@
   <div id="menu2" class="tab-pane fade">
 
     <h3>Meal prep</h3>
-    {{!-- <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p> --}}
 
-      <div id = "favorites2"></div>  
-       
- 
- 
+    <div id = "favorites2"></div>  
+
+
   </div>
 
 
@@ -410,14 +408,18 @@
           align: 'left',
           autoclose: true,
           'default': 'now'
-      });
-
+        });
     });
   </script>
 
   <script type="text/javascript">
     $(document).bind('DOMNodeInserted', function(){
-       $('.datepicker').datepicker();
+       var input = $('.datepicker').datepicker({
+          placement: 'top',
+          align: 'left',
+          autoclose: true,
+          'default': 'now'
+          });
      });
   </script>
 

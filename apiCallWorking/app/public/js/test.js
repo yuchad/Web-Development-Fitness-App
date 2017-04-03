@@ -93,30 +93,12 @@ function doIt(ingredients) {
         },
         error: function(err) { alert(err); },
         beforeSend: function(xhr) {
+
         xhr.setRequestHeader("X-Mashape-Authorization", "Iq8WHFs6VomshBya8vdSeZU7kL7mp1KlOLFjsnuKWX7TjWyclC"); // Enter here your Mashape key
         }
     });
 }
-
-var favList = [];
-function addFav(id){
-    if (favList.length == 0){
-        addRecipe(id);
-    } 
-    else if(favList.indexOf(id) == -1){
-        addRecipe(id);
-    }
-
-    else{
-        alert("its already on the fav list");
-    }
-}
-
-function removeFav(id){
-    favList.splice(favList.indexOf(id), 1);
-    console.log(favList);
-}
-
+var count = 0;
 function addRecipe(id){
     favList.push(id);               
     var recipe = $.ajax({
@@ -189,32 +171,39 @@ function addRecipe(id){
             var br = document.createElement("BR");
             card.appendChild(br);
 
-            card.setAttribute('id','recipeInfo');
-            card.className = "card col-md-4 col-sm-4 col-xs-4";
-
-            var br = document.createElement("BR");
-            card.appendChild(br);
-
-            var element = document.getElementById("favorites2");
-            element.appendChild(card);
+            card.setAttribute('id','favRecipeInfo');
 
             var cardBlock3 = document.createElement("div");
             cardBlock3.className = "card-block";
 
-            var date = document.createElement("p");
-            date.className = "card-link";
-            date.innerHTML = "<p>Date: <input type=\"text\" class=\"datepicker\"></p>";
-            cardBlock3.appendChild(date);
+            
+            var dates = document.createElement("p");
+            dates.className = "card-link";
+            dates.innerHTML = "Date: <input name = \"d\" type=\"text\" class=\"datepicker\">";
+            cardBlock3.appendChild(dates);
 
-            var time = document.createElement("p");
-            time.className = "card-link";
-            time.innerHTML = "<p>Time: <input class=\"single-input\" value=\"\" placeholder=\"Now\"></p>";
-            cardBlock3.appendChild(time);
-
-            card.appendChild(cardBlock3);
+            var times = document.createElement("p");
+            times.className = "card-link";
+            times.innerHTML = "Time: <input name = \"t\" type=\"text\" class=\"single-input\">";
+            cardBlock3.appendChild(times);
 
             var br = document.createElement("BR");
             card.appendChild(br);
+
+            var meal = document.createElement("BUTTON");
+            meal.setAttribute('id','addMeal');
+            meal.className = "btn btn-default btn-sm card-link";
+            meal.setAttribute('onclick','addMeal();');
+            meal.onclick = function(){
+                addMeal(document.getElementsByName("d"), document.getElementsByName("t"));
+            };                        
+            meal.innerHTML = "<span class =\"glyphicon glyphicon-plus\"></span> Add Meal ";
+            cardBlock3.appendChild(meal);
+
+            card.appendChild(cardBlock3);
+            var br = document.createElement("BR");
+            card.appendChild(br);
+
             card.className = "card fav col-md-3 col-sm-3 col-xs-3";
 
             var element = document.getElementById("favorites2");
@@ -227,3 +216,27 @@ function addRecipe(id){
     });
 }
 
+var favList = [];
+function addFav(id){
+    if (favList.length == 0){
+        addRecipe(id);
+    } 
+    else if(favList.indexOf(id) == -1){
+        addRecipe(id);
+    }
+
+    else{
+        alert("its already on the fav list");
+    }
+}
+
+function removeFav(id){
+    favList.splice(favList.indexOf(id), 1);
+}
+
+var meals = [];
+function addMeal(d, t){
+    meals.push({'date' : d[count].value, 'time' : t[count].value});
+    count++;
+    console.log(meals);
+}
