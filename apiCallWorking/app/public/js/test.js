@@ -236,7 +236,11 @@ function removeFav(id){
 
 var meals = [];
 function addMeal(d, t){
-    meals.push({'date' : d[count].value, 'time' : t[count].value});
+    var date = (d[count].value).split("/");
+    var splitDate = date[2] + "-" + date[1] + "-" + date[0];
+
+    meals.push({'start' : splitDate+"T" + t[count].value});
     count++;
     console.log(meals);
 }
+
