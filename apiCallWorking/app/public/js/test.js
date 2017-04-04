@@ -118,8 +118,8 @@ function addRecipe(id){
             var cardTitle = document.createElement("h5");
             var node = document.createTextNode(data.title);
             cardTitle.appendChild(node);
-            cardTitle.setAttribute('id','recipeName');
-            cardTitle.className = "card-title";
+            // cardTitle.setAttribute('class','recipeName');
+            cardTitle.className = "card-title recipeName";
             cardBlock.appendChild(cardTitle);
 
             card.appendChild(cardBlock);
@@ -144,10 +144,19 @@ function addRecipe(id){
             var cardBlock2 = document.createElement("div");
             cardBlock2.className = "card-block";
 
+
             var recipeLink = document.createElement("BUTTON");
-            recipeLink.className= "card-link btn btn-info btn-sm";
+            recipeLink.className= "link card-link btn btn-info btn-sm";
             recipeLink.innerHTML = "<a target = \"_blank\" href = \"" + data.sourceUrl + "\">View Ricipe</a>"
             recipeLink.setAttribute('id','link');
+
+           /* var recipeLink = document.createElement("a");
+            recipeLink.setAttribute('href',data.sourceUrl);                        
+            recipeLink.setAttribute('target','_blank');
+            // recipeLink.setAttribute('class','link');
+            recipeLink.innerHTML = "View Recipe";
+            recipeLink.className = "card-link link";*/
+
             cardBlock2.appendChild(recipeLink);
 
             var rm = document.createElement("BUTTON");
@@ -190,10 +199,14 @@ function addRecipe(id){
             meal.className = "btn btn-success btn-sm card-link";
             meal.setAttribute('onclick','addMeal();');
             meal.onclick = function(){
-                addMeal(document.getElementsByName("d"), document.getElementsByName("t"));                          
+                     
                 element.removeChild(card);
                 window.alert("Recipe added to your calender");
                 removeFav(data.id);
+
+                  addMeal(document.getElementsByName("d"), document.getElementsByName("t"),document.getElementsByClassName("recipeName"),document.getElementsByClassName("link"));
+                  // console.log(document.getElementsByClassName("recipeName"));
+
             };                        
             meal.innerHTML = "<span class =\"glyphicon glyphicon-plus\"></span> Add Meal ";
             cardBlock3.appendChild(meal);
@@ -231,8 +244,18 @@ function removeFav(id){
 }
 
 var meals = [];
-function addMeal(d, t){
-    meals.push({'date' : d[count].value, 'time' : t[count].value});
+function addMeal(d, t, name,link){
+    var date = (d[count].value).split("/");
+    var splitDate = date[2] + "-" + date[0] + "-" + date[1];
+    var meal = {
+        title : name[count].innerHTML,
+        url : link[count].href,
+        start : splitDate+"T" + t[count].value
+
+    };
+
+    meals.push(meal);
     count++;
-    console.log(meals);
+   console.log(meals);
 }
+
