@@ -181,3 +181,7 @@ div#home.home2.tab-pane.fade.in.active.login, div#menu1.tab-pane.fade.login.acti
 label{
   	font-size: 15px;
 }  
+
+div.col-md-3.col-sm-3.col-xs-3.searchBox{
+	margin: none;
+}
