@@ -57,7 +57,7 @@ function doIt(ingredients) {
 
                         var recipeLink = document.createElement("BUTTON");
                         recipeLink.className= "card-link btn btn-info btn-sm";
-                        recipeLink.innerHTML = "<a target = \"_blank\" href = \"" + data.sourceUrl + "\">View Ricipe</a>"
+                        recipeLink.innerHTML = "<a target = \"_blank\" href = \"" + data.sourceUrl + "\">View Recipe</a>"
                         recipeLink.setAttribute('id','link');
                         cardBlock2.appendChild(recipeLink);
 
@@ -146,8 +146,8 @@ function addRecipe(id){
 
 
             var recipeLink = document.createElement("BUTTON");
-            recipeLink.className= "link card-link btn btn-info btn-sm";
-            recipeLink.innerHTML = "<a target = \"_blank\" href = \"" + data.sourceUrl + "\">View Ricipe</a>"
+            recipeLink.className= "card-link btn btn-info btn-sm";
+            recipeLink.innerHTML = "<a class = \"link\" target = \"_blank\" href = \"" + data.sourceUrl + "\">View Recipe</a>"
             recipeLink.setAttribute('id','link');
 
            /* var recipeLink = document.createElement("a");
@@ -200,12 +200,11 @@ function addRecipe(id){
             meal.setAttribute('onclick','addMeal();');
             meal.onclick = function(){
                      
-                element.removeChild(card);
                 window.alert("Recipe added to your calender");
-                removeFav(data.id);
+               
 
                   addMeal(document.getElementsByName("d"), document.getElementsByName("t"),document.getElementsByClassName("recipeName"),document.getElementsByClassName("link"));
-                  // console.log(document.getElementsByClassName("recipeName"));
+                   // console.log(document.getElementsByClassName("link"));
 
             };                        
             meal.innerHTML = "<span class =\"glyphicon glyphicon-plus\"></span> Add Meal ";
