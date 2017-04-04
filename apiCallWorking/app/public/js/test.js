@@ -15,7 +15,7 @@ function doIt(ingredients) {
                     dataType: 'json',
                     success: function(data) {
                         var card = document.createElement("div");
-
+                        console.log(data);
                         var recipeImage = document.createElement("img");
                         recipeImage.className = "card-img-top";
                         recipeImage.setAttribute('src',data.image);                        
@@ -26,7 +26,7 @@ function doIt(ingredients) {
                         var cardBlock = document.createElement("div");
                         cardBlock.className = "card-block";
 
-                        var cardTitle = document.createElement("h4");
+                        var cardTitle = document.createElement("h5");
                         var node = document.createTextNode(data.title);
                         cardTitle.appendChild(node);
                         cardTitle.setAttribute('id','recipeName');
@@ -39,13 +39,13 @@ function doIt(ingredients) {
                         ul.className = "list-group list-group-flush";
 
                         var calories = document.createElement("li");
-                        calories.innerHTML = "Calories: " + data.nutrition.nutrients[0].amount;
+                        calories.innerHTML = "<span style=\"font-weight: bold\"> Calories: </span>" + data.nutrition.nutrients[0].amount;
                         calories.setAttribute('id','calories');
                         calories.className = "list-group-item";
                         ul.appendChild(calories);
 
                         var time = document.createElement("li");
-                        time.innerHTML = "Ready in: " + data.readyInMinutes + " minutes";
+                        time.innerHTML = "<span style=\"font-weight: bold\">Ready in: </span>" + data.readyInMinutes + " minutes";
                         time.setAttribute('id','time');
                         time.className = "list-group-item";
                         ul.appendChild(time);
@@ -55,20 +55,19 @@ function doIt(ingredients) {
                         var cardBlock2 = document.createElement("div");
                         cardBlock2.className = "card-block";
 
-                        var recipeLink = document.createElement("a");
-                        recipeLink.setAttribute('href',data.sourceUrl);                        
-                        recipeLink.setAttribute('target','_blank');
+                        var recipeLink = document.createElement("BUTTON");
+                        recipeLink.className= "card-link btn btn-info btn-sm";
+                        recipeLink.innerHTML = "<a target = \"_blank\" href = \"" + data.sourceUrl + "\">View Ricipe</a>"
                         recipeLink.setAttribute('id','link');
-                        recipeLink.innerHTML = "View Recipe";
-                        recipeLink.className = "card-link";
                         cardBlock2.appendChild(recipeLink);
 
                         var fav = document.createElement("BUTTON");
                         fav.setAttribute('id','favorite');
-                        fav.className = "btn btn-default btn-sm";
+                        fav.className = "btn btn-success btn-sm";
                         fav.setAttribute('onclick','addFav();');
                         fav.onclick = function(){
                             addFav(data.id);
+                            window.alert("Added to favorite");
                         };                        
                         fav.innerHTML = "<span class =\"glyphicon glyphicon-star\"></span> Add to Favorite ";
                         cardBlock2.appendChild(fav);
@@ -77,9 +76,6 @@ function doIt(ingredients) {
 
                         card.setAttribute('id','recipeInfo');
                         card.className = "card col-md-4 col-sm-4 col-xs-4";
-
-                        var br = document.createElement("BR");
-                        card.appendChild(br);
 
                         var element = document.getElementById("recipes");
                         element.appendChild(card);
@@ -119,7 +115,7 @@ function addRecipe(id){
             var cardBlock = document.createElement("div");
             cardBlock.className = "card-block";
 
-            var cardTitle = document.createElement("h4");
+            var cardTitle = document.createElement("h5");
             var node = document.createTextNode(data.title);
             cardTitle.appendChild(node);
             cardTitle.setAttribute('id','recipeName');
@@ -132,13 +128,13 @@ function addRecipe(id){
             ul.className = "list-group list-group-flush";
 
             var calories = document.createElement("li");
-            calories.innerHTML = "Calories: " + data.nutrition.nutrients[0].amount;
+            calories.innerHTML = "<span style=\"font-weight: bold\"> Calories: </span>" + data.nutrition.nutrients[0].amount;
             calories.setAttribute('id','calories');
             calories.className = "list-group-item";
             ul.appendChild(calories);
 
             var time = document.createElement("li");
-            time.innerHTML = "Ready in: " + data.readyInMinutes + " minutes";
+            time.innerHTML = "<span style=\"font-weight: bold\"> Ready in: </span>" + data.readyInMinutes + " minutes";
             time.setAttribute('id','time');
             time.className = "list-group-item";
             ul.appendChild(time);
@@ -148,21 +144,20 @@ function addRecipe(id){
             var cardBlock2 = document.createElement("div");
             cardBlock2.className = "card-block";
 
-            var recipeLink = document.createElement("a");
-            recipeLink.setAttribute('href',data.sourceUrl);                        
-            recipeLink.setAttribute('target','_blank');
+            var recipeLink = document.createElement("BUTTON");
+            recipeLink.className= "card-link btn btn-info btn-sm";
+            recipeLink.innerHTML = "<a target = \"_blank\" href = \"" + data.sourceUrl + "\">View Ricipe</a>"
             recipeLink.setAttribute('id','link');
-            recipeLink.innerHTML = "View Recipe";
-            recipeLink.className = "card-link";
             cardBlock2.appendChild(recipeLink);
 
             var rm = document.createElement("BUTTON");
             rm.setAttribute('id','removeFav');
-            rm.className = "btn btn-default btn-sm";
+            rm.className = "btn btn-danger btn-sm";
             rm.setAttribute('onclick','removeFav();');
             rm.onclick = function(){
-            removeFav(data.id);
-            element.removeChild(card);
+                removeFav(data.id);
+                element.removeChild(card);
+                window.alert("Recipe Removed");
             };                        
             rm.innerHTML = "<span class =\"glyphicon glyphicon-trash\"></span> Remove ";
             cardBlock2.appendChild(rm);
@@ -192,17 +187,18 @@ function addRecipe(id){
 
             var meal = document.createElement("BUTTON");
             meal.setAttribute('id','addMeal');
-            meal.className = "btn btn-default btn-sm card-link";
+            meal.className = "btn btn-success btn-sm card-link";
             meal.setAttribute('onclick','addMeal();');
             meal.onclick = function(){
-                addMeal(document.getElementsByName("d"), document.getElementsByName("t"));
+                addMeal(document.getElementsByName("d"), document.getElementsByName("t"));                          
+                element.removeChild(card);
+                window.alert("Recipe added to your calender");
+                removeFav(data.id);
             };                        
             meal.innerHTML = "<span class =\"glyphicon glyphicon-plus\"></span> Add Meal ";
             cardBlock3.appendChild(meal);
 
             card.appendChild(cardBlock3);
-            var br = document.createElement("BR");
-            card.appendChild(br);
 
             card.className = "card fav col-md-3 col-sm-3 col-xs-3";
 
@@ -226,7 +222,7 @@ function addFav(id){
     }
 
     else{
-        alert("its already on the fav list");
+        alert("This Recipe is already on the list");
     }
 }
 
