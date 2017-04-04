@@ -10,18 +10,18 @@
       </ul>
 
       <div class="tab-content">
-        <div id="home" class="tab-pane fade in active login">
+        <div class="home2 tab-pane fade in active login" id="home" >
           <section class="insert">
               <form action="/logged-in" method="post">
                   <h5 class="tab">Login</h5>
                   {{ data }}
                   <p>
                     <label for="usernamesignup" class="uname" data-icon="u">Your username</label><br>
-                    <input id="username" name="username" required="required" type="text" placeholder="Enter username" />
+                    <input id="username" class = "form-control" name="username" required="required" type="text" placeholder="Enter username" />
                   </p>
                   <p>
                     <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label><br>
-                    <input id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO"/>
+                    <input id="password" class = "form-control" name="password" required="required" type="password" placeholder="eg. X8df!90EO"/>
                   </p>
                   <button type="submit" class="btn btn-warning">Login</button>
               </form>
@@ -33,19 +33,19 @@
                     <h5>Sign up</h5>
                     <p>
                       <label for="usernamesignup" class="uname" data-icon="u">Your username</label><br>
-                      <input id="username" name="username" required="required" type="text" placeholder="Enter username" />
+                      <input id="username" class = "form-control" name="username" required="required" type="text" placeholder="Enter username" />
                     </p>
                     <p>
                       <label for="emailsignup" class="youmail" data-icon="e" > Your email</label><br>
-                      <input id="email" name="email" required="required" type="email" placeholder="myemail@mail.com"/>
+                      <input id="email" class = "form-control" name="email" required="required" type="email" placeholder="myemail@mail.com"/>
                     </p>
                     <p>
                       <label for="passwordsignup" class="youpasswd" data-icon="p">Your password </label><br>
-                      <input id="password" name="password" required="required" type="password" placeholder="eg. X8df!90EO"/>
+                      <input id="password" class = "form-control" name="password" required="required" type="password" placeholder="eg. X8df!90EO"/>
                     </p>
                     <p>
                       <label for="passwordsignup_confirm" class="youpasswd" data-icon="p">Please confirm your password </label><br>
-                      <input id="passwordsignup_confirm" name="passwordsignup_confirm" required="required" type="password" placeholder="eg. X8df!90EO"/>
+                      <input id="passwordsignup_confirm" class = "form-control" name="passwordsignup_confirm" required="required" type="password" placeholder="eg. X8df!90EO"/>
                     </p>
                     <p class="single-field">
                      <label for="gender" class="">Gender</label>
