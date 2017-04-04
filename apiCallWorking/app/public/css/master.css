@@ -16,6 +16,10 @@ body {
   text-align: center;*/
 }
 
+.container-fluid {
+  margin:0 !important;
+}
+
 .login {
   text-align: left;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -23,7 +27,7 @@ body {
 }
 
 .login label, span {
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .login ul{
@@ -93,7 +97,7 @@ body {
 .col-md-3 {
   text-align: center;
   background-color: rgb(115, 173, 33);
-  height: 800px;
+  height: 1200px;
 }
 
 .col-md-3 h5 {
@@ -213,7 +217,11 @@ hr {
 }
 #getStarted{
    background-color: #FA7921;
+
    height:1000px;
+
+   height: 1000px;
+
 }
 
 .get-started{
