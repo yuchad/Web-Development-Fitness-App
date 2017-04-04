@@ -9,7 +9,7 @@
         <span class="icon-bar"></span>
       </button>
       <a class="navbar-brand" href="#"><img class="img-responsive img-thumbnail" src="/Images/ezeatinv3.png" height="40" width="40"/></a>
-      <a class="navbar-brand" href="#">EzyEats</a>
+      <a class="navbar-brand" href="#">EzEatin'</a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -20,12 +20,12 @@
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#">
           <form method="post" action="/settings">
-              <button type="submit">Settings</button>
+              <button class = "btn btn-info" type="submit">Settings</button>
           </form>
         </a></li>
         <li><a href="#">
           <form method="post" action="/logout">
-              <button type="submit">Logout</button>
+              <button class = "btn btn-danger" type="submit">Logout</button>
           </form>
         </a></li>
       </ul>
@@ -135,7 +135,7 @@
      <div class="container-fluid">
       <div class="row">
 
-        <div class="col-md-3 col-sm-3 col-xs-3">
+        <div class="col-md-3 col-sm-3 col-xs-3 searchBox">
           <div id="ingredientsList">
             <h3>Enter your ingredients</h3>
             <input id="search" placeholder="Enter item" onkeyup="newIngredient(event);">
