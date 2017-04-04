@@ -172,9 +172,7 @@ hr {
   margin-top:2%;
 }
 
-.row{
-  margin:0;
-}
+
 
 .profile-pic{
   float:none;
@@ -219,20 +217,31 @@ hr {
 }
 #getStarted{
    background-color: #FA7921;
-   height: 1000px;
+
+   height:1000px;
+
  }
 
+
+
+
 .get-started{
-  color:white;
-   background:rgba(1,1,1,0.5);
-   padding: 20px 20px 20px 20px;
-   border-radius: 30px;
-   width: 30%;
-   height:30%;
-   margin-left: 10px;
-   margin-right: 10px;
-   margin-bottom: 10px;
+    color: white;
+    background: rgba(1,1,1,0.5);
+    padding: 20px 20px 20px 20px;
+    border-radius: 30px;
+    width: 30%;
+    height: 30%;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
 }
+
+.center{
+  text-align: center;
+}
+
 .tabs li{
   background-color: #FA7921;
 }
@@ -258,7 +267,7 @@ hr {
     color: black; 
     border: 2px solid #FA7921;
     border-radius: 5px;
-    width: 20%;
+    width: 30%;
     height: 30px;
     float:none;
     text-align: center;
