@@ -181,6 +181,7 @@ hr {
 
 .profile-pic-info{
   border-radius: 300px;
+  padding: 5px;
   float:none;
   margin: auto;
   background-color: #FA7921;
