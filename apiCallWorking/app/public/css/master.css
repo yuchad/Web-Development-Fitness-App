@@ -50,7 +50,8 @@ body {
 }
 
 #home, #menu1 {
-  background-color: rgba(255,255,255, 0.7);
+  background-color: rgba(0,0,0, 0.6);
+  color: white;
 }
 
 .tabLogin {
@@ -119,12 +120,13 @@ button {
 }
 
 .loginBody {
-    background:url('https://static.pexels.com/photos/196643/pexels-photo-196643.jpeg') no-repeat center center fixed;
+    background:url('../Images/bg2.jpg') no-repeat center center fixed;
     box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.1);
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    height: 1400px;
   }
 
 /*Home Page*/
