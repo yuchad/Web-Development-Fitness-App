@@ -168,9 +168,7 @@ hr {
   margin-top:2%;
 }
 
-.row{
-  margin:0;
-}
+
 
 .profile-pic{
   float:none;
@@ -253,7 +251,7 @@ hr {
     color: black; 
     border: 2px solid #FA7921;
     border-radius: 5px;
-    width: 20%;
+    width: 30%;
     height: 30px;
     float:none;
     text-align: center;
