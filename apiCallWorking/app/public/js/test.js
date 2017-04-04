@@ -122,8 +122,8 @@ function addRecipe(id){
             var cardTitle = document.createElement("h4");
             var node = document.createTextNode(data.title);
             cardTitle.appendChild(node);
-            cardTitle.setAttribute('id','recipeName');
-            cardTitle.className = "card-title";
+            // cardTitle.setAttribute('class','recipeName');
+            cardTitle.className = "card-title recipeName";
             cardBlock.appendChild(cardTitle);
 
             card.appendChild(cardBlock);
@@ -151,9 +151,9 @@ function addRecipe(id){
             var recipeLink = document.createElement("a");
             recipeLink.setAttribute('href',data.sourceUrl);                        
             recipeLink.setAttribute('target','_blank');
-            recipeLink.setAttribute('id','link');
+            // recipeLink.setAttribute('class','link');
             recipeLink.innerHTML = "View Recipe";
-            recipeLink.className = "card-link";
+            recipeLink.className = "card-link link";
             cardBlock2.appendChild(recipeLink);
 
             var rm = document.createElement("BUTTON");
@@ -195,7 +195,8 @@ function addRecipe(id){
             meal.className = "btn btn-default btn-sm card-link";
             meal.setAttribute('onclick','addMeal();');
             meal.onclick = function(){
-                addMeal(document.getElementsByName("d"), document.getElementsByName("t"),document.getElementById("recipeName").innerHTML,document.getElementById("link").href);
+                  addMeal(document.getElementsByName("d"), document.getElementsByName("t"),document.getElementsByClassName("recipeName"),document.getElementsByClassName("link"));
+                  // console.log(document.getElementsByClassName("recipeName"));
             };                        
             meal.innerHTML = "<span class =\"glyphicon glyphicon-plus\"></span> Add Meal ";
             cardBlock3.appendChild(meal);
@@ -239,8 +240,8 @@ function addMeal(d, t, name,link){
     var date = (d[count].value).split("/");
     var splitDate = date[2] + "-" + date[0] + "-" + date[1];
     var meal = {
-        title : name,
-        url : link,
+        title : name[count].innerHTML,
+        url : link[count].href,
         start : splitDate+"T" + t[count].value
 
     };
