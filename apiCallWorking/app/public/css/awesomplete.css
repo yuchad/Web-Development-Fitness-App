@@ -118,18 +118,19 @@
 }
 .card{
 	width: 25rem;
-	height: 330px;
+	height: 320px;
 }
 
 .fav{
 	width: 30rem;
-	height: 450px;
+	height: 415px;
 }
 
-#recipeInfo{
+#recipeInfo, #favRecipeInfo{
 	display: inline-block;
 	vertical-align: middle;
 	float:none;
+	box-shadow: 0 0 10px .1px;
 }
 
 #favorite, #removeFav{
@@ -137,18 +138,26 @@
 }
 
 #link{
-
 	float: left;
-
+	color: black;
 }
-
 
 #favorites2{
 	text-align: center;
 }
 
+#recipeName{
+	color: black;
+	font-weight: bold;
+}
 
 h3{
 	text-align: center;
 }
+
+
+#calendar {
+		max-width: 900px;
+		margin: 0 auto;
+	}
 
