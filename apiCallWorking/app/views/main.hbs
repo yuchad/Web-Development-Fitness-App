@@ -134,15 +134,14 @@
 
         <div class="col-md-3 col-sm-3 col-xs-3">
           <div id="ingredientsList">
-            <h5>Enter your ingredients</h5>
+            <h3>Enter your ingredients</h3>
             <input id="search" placeholder="Enter item" onkeyup="newIngredient(event);">
           </div>
           <br>
           <button  type="button" class="sr btn btn-success btn-xs" onclick="getAllIngredients();">Find Recipes</button>
         </div>
 
-        <div class="col-md-9 col-sm-9 col-xs-9">
-          <h2 class = "h2">Main user interface</h2>     
+        <div class="col-md-9 col-sm-9 col-xs-9">   
           <div class="row" id = "recipes"></div>
        </div>
 
@@ -304,7 +303,7 @@
 
               
             }
-             eventsFinal = events1.concat(meals);
+            var eventsFinal = events1.concat(meals);
               console.log(eventsFinal);
           } 
           

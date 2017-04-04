@@ -118,7 +118,7 @@ function addRecipe(id){
             var cardTitle = document.createElement("h5");
             var node = document.createTextNode(data.title);
             cardTitle.appendChild(node);
-            // cardTitle.setAttribute('class','recipeName');
+            cardTitle.setAttribute('id','recipeName');
             cardTitle.className = "card-title recipeName";
             cardBlock.appendChild(cardTitle);
 
