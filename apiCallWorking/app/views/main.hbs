@@ -39,7 +39,7 @@
 <div class="container">
   <br>
 
-  <ul class = "nav nav-pills nav-justified">
+  <ul class = "tabs nav nav-pills nav-justified">
 
     <li class="active"><a data-toggle = "pill" href="#home">Home</a></li>
     <li><a data-toggle = "pill" href="#getStarted">Get Started</a></li>
@@ -54,7 +54,7 @@
     <div id="home" class="tab-pane fade in active text-center">
 
       <div class="row">
-        <div class="col-md-4 col-xs-4">
+        <div class="profile-div col-md-4 col-xs-4">
           <div class="row-prof">
             <img src="/Images/user.png" class="profile-pic img-responsive img-circle" height="150" width="150">
             <h1 class="profileName" >{{ user.username }}</h1>
@@ -165,9 +165,10 @@
   <div id="menu3" class="tab-pane fade">
 
 
-    <p>Google Calendar API Quickstart</p>
+    <h1>Calendar</h1>
 
     <!--Add buttons to initiate auth sequence and sign out-->
+
     <button id="authorize-button" style="display: none;">Authorize</button>
     <button id="signout-button" style="display: none;">Sign Out</button>
 
