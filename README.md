@@ -7,6 +7,7 @@ http://ezeatin.herokuapp.com/
 Test credendtials - 
 
 Username: chad
+
 Password: chad
 
 
