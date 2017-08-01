@@ -4,7 +4,7 @@ Website URL:
 
 http://ezeatin.herokuapp.com/
 
-Test credendtials - 
+Test Credentials - 
 
 Username: chad
 
